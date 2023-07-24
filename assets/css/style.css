@@ -6,28 +6,83 @@
     box-sizing: border-box;
 }
 
+#outer-login-page{
+    display:grid;
+    grid-template-columns: 40% 60%;
+    justify-content: space-around;
+    width:100%;
+    height: 100vh;
+}
+
 #login-img {
-    float:left;
-    height:100vh;
-    width: 600px;
+    height:100%;
+    width: 100%;
     background:url('../images/login_image.webp') center center/ cover no-repeat;
 }
 
-#login-holder {
+#login-img div{
+    padding-top:50px;
+    margin:150px auto 0 auto;
+    width:50%;
+    height:200px;
+    background-color: rgba(0,0,0,0.6);
+    color:#fff;
+    text-transform: uppercase;
     text-align: center;
 }
 
+#login-holder {
+    width: 100%;
+}
+
 #login-field{
+    margin:100px auto 0 auto;
     text-align: left;
-    width:300px;
-    height:500px;
+    width:250px;
+    height:240px;
+    border:3px inset #1b1b1b;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-left:20px;
+}
+
+#login-field legend{
+    margin-left:15px;
 }
 
 .login-input {
     border:#1b1b1b solid 2px;
     border-radius: 3px;
+    margin-top:5px;
+    margin-bottom: 15px;
 }
 
-#login-holder{
-    float:right;
+.login-input:hover{
+    border-color: red;
+}
+
+.login-input:focus {
+    background-color: #fa7d92;
+}
+
+#login-button{
+    height:30px;
+    width:60px;
+    border:#5e5959 1px inset;
+    border-radius: 3px;
+    margin-top:10px;
+}
+
+#login-button:hover{
+    background-color: #fa7d92;
+}
+
+#suscribe-link-div{
+    width:100%;
+    text-align:center;
+    margin: 50px auto 0 auto;
+}
+
+a{
+    text-decoration: none;
 }
