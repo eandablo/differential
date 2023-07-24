@@ -22,9 +22,9 @@
 
 #login-img div{
     padding-top:50px;
-    margin:150px auto 0 auto;
+    margin:230px auto 0 auto;
     width:50%;
-    height:200px;
+    height:150px;
     background-color: rgba(0,0,0,0.6);
     color:#fff;
     text-transform: uppercase;
@@ -47,6 +47,11 @@
 
 a {
     text-decoration: none;
+}
+
+#login-holder div{
+    text-align: center;
+    width:100%;
 }
 
 #login-field{
