@@ -35,6 +35,20 @@
     width: 100%;
 }
 
+#login-holder ul{
+    list-style-type: none;
+    text-align: end;
+}
+
+#login-holder li {
+ display:inline-block;
+ margin-right:10px;
+}
+
+a {
+    text-decoration: none;
+}
+
 #login-field{
     margin:100px auto 0 auto;
     text-align: left;
@@ -83,6 +97,3 @@
     margin: 50px auto 0 auto;
 }
 
-a{
-    text-decoration: none;
-}
