@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,15 +11,22 @@
     <meta name="description" content="Understanding differential equation">
     <meta name="keywords" content="math,differential equations,mechanics">
 </head>
+
 <body>
     <div id="login-img" role="img" aria-label="drawing block and instruments"></div>
     <div id="login-holder">
         <form id="login-form" action="#">
-            <label for="email">Email</label>
-            <input type="email" id="user-name" name="user-email">
-            <label for="user-pass">Password</label>
-            <input type="password" id="user-pass" name="user-password">
+            <fieldset id="login-field">
+                <label for="email">Email: </label>
+                <input type="email" id="user-name" name="user-email" class="login-input">
+                <br>
+                <label for="user-pass">Password: </label>
+                <input type="password" id="user-pass" name="user-password" class="login-input">
+                <br>
+                <button id="submit-button" type="submit">Login</button>
+            </fieldset>
         </form>
     </div>
 </body>
+
 </html>

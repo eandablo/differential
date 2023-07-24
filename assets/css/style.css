@@ -13,6 +13,21 @@
     background:url('../images/login_image.webp') center center/ cover no-repeat;
 }
 
+#login-holder {
+    text-align: center;
+}
+
+#login-field{
+    text-align: left;
+    width:300px;
+    height:500px;
+}
+
+.login-input {
+    border:#1b1b1b solid 2px;
+    border-radius: 3px;
+}
+
 #login-holder{
     float:right;
 }
