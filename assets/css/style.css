@@ -55,6 +55,7 @@ a {
 #login-holder div{
     text-align: center;
     width:100%;
+    text-transform: uppercase;
 }
 
 #login-field{
@@ -77,6 +78,7 @@ a {
     border-radius: 3px;
     margin-top:5px;
     margin-bottom: 15px;
+    width:200px;
 }
 
 .login-input:hover{
