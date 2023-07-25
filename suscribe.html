@@ -34,11 +34,25 @@
                     <h3>Differential Equations</h3>
                 </div>
             </header>
-            <form id="suscribe-form" action="#">
+            <form id="suscribe-form" action="userpage.html">
                 <fieldset id="suscribe-field">
                     <legend>
-                        <h3>Login Deatils</h3>
+                        <h3>Your details</h3>
                     </legend>
+                    <label for="fname">Full Name: </label>
+                    <br>
+                    <input type="text" id="fname" name="fname" class="login-input">
+                    <br>
+                    <label for="education">Highest Education Level</label>
+                    <br>
+                    <select id="education" name="education" class="login-input" required>
+                        <option value="">Please select</option>
+                        <option value="level5">Level 5</option>
+                        <option value="level6">Level 6</option>
+                        <option value="level7">Level 7</option>
+                        <option value="level8">Level 8</option>
+                    </select>
+                    <br>
                     <label for="email">Email: </label>
                     <br>
                     <input type="email" id="user-name" name="user-email" class="login-input">

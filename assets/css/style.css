@@ -6,6 +6,8 @@
     box-sizing: border-box;
 }
 
+/* Login page right left image holder*/
+
 #outer-login-page{
     display:grid;
     grid-template-columns: 40% 60%;
@@ -31,6 +33,7 @@
     text-align: center;
 }
 
+/* Login page right login details holder */
 #login-holder {
     width: 100%;
 }
@@ -102,3 +105,31 @@ a {
     margin: 50px auto 0 auto;
 }
 
+/* Suscribe page */
+
+#suscribe-field {
+    margin: 75px auto 0 auto;
+    text-align: left;
+    width: 250px;
+    height: 350px;
+    border: 3px inset #1b1b1b;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+#suscribe-field legend {
+    margin-left: 15px;
+}
+
+#suscribe-button {
+    height: 30px;
+    width: 60px;
+    border: #5e5959 1px inset;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+#suscribe-button:hover {
+    background-color: #fa7d92;
+}
