@@ -11,16 +11,24 @@ function activateButtons(){
  */
 function loginFunction(event){
   event.preventDefault();
-  loginField=document.getElementById('login-field');
-  userName=loginField.children[3].value;
-  userPass=loginField.children[7].value;
-  usersInfo=[
+  let loginForm=document.getElementById('login-form');
+  let loginField=document.getElementById('login-field');
+  let userName=loginField.children[3].value;
+  let userPass=loginField.children[7].value;
+  let usersInfo=[
     {name:'Efren',email:'e@gmail.com',password:'efren'},
     {name:'Leela',email:'l@gmail.com',password:'leela'}
   ];
+  let validUser=false;
   for (user of usersInfo){
     if (user.email===userName && user.password===userPass){
-      alert('valid user');
+      validUser=true;
     }
+  }
+  if (validUser){
+    loginForm.submit();
+  } else{
+    loginField.children[3].value="";
+    loginField.children[7].value="";
   }
 }
