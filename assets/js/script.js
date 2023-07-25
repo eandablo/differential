@@ -9,6 +9,7 @@ function activateButtons(){
  *gets username and password from login page
  *finds if user name is in the list
  */
+
 function loginFunction(event){
   event.preventDefault();
   let loginForm=document.getElementById('login-form');
@@ -26,9 +27,17 @@ function loginFunction(event){
     }
   }
   if (validUser){
-    loginForm.submit();
+    window.location.href="userpage.html"
+    
   } else{
     loginField.children[3].value="";
     loginField.children[7].value="";
+    alert('User name or password incorrect');
   }
 }
+
+/**
+ * sends details to user page
+ */
+
+
