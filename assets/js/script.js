@@ -37,4 +37,3 @@ function loginFunction(event){
     alert('User name or password incorrect');
   }
 }
-
