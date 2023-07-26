@@ -3,9 +3,7 @@ document.addEventListener('DOMContentLoaded',function(){
   // gets login button and allows allows login if conditions in loginFunction are met
   document.getElementById('login-button').addEventListener('click', loginFunction);
 });
-//document.getElementById('user-page-name').innerText=localStorage.getItem('username');
-//document.getElementById('user-page-email').innerText=localStorage.getItem('useremail');
-//document.getElementById('user-page-degree').innerText = localStorage.getItem('userdegree');
+
 /**
  *gets username and password from login page
  *finds if user name is in the list and redirects to userpage if condition is met
