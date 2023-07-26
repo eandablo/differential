@@ -1,6 +1,6 @@
 //After loading page,  this waits for a 
 document.addEventListener('DOMContentLoaded',function(){
-  // gets login button and allows allows login if conditions in loginFunction are met
+// gets login button and allows allows login if conditions in loginFunction are met
   document.getElementById('login-button').addEventListener('click', loginFunction);
 });
 
@@ -15,8 +15,8 @@ function loginFunction(event){
   let userEmail=loginField.children[3].value;
   let userPass=loginField.children[7].value;
   let usersInfo=[
-    {name:'Efren',email:'e@gmail.com',password:'efren',degree:'level5'},
-    {name:'Leela',email:'l@gmail.com',password:'leela',degree:'level7'}
+    {name:'Efren Andablo',email:'e@gmail.com',password:'efren',degree:'level5'},
+    {name:'Leela Lou',email:'l@gmail.com',password:'leela',degree:'level7'}
   ];
   // checking if email exists in usersInfo and password matches user email
   let validUser=false;
