@@ -22,12 +22,13 @@ document.addEventListener('DOMContentLoaded',function(){
     let infoButton = document.getElementById('user-button');
     infoButton.addEventListener('click',infoDisplayButton);
 });
-function infoDisplayButton(event){
+function infoDisplayButton(){
     let infoDisplay = document.getElementById('user-info-div');
     if (window.getComputedStyle(infoDisplay).display==='none') {
-    console.log(window.getComputedStyle(infoDisplay).display);
       infoDisplay.style.display='block';
+ //   this.style.backgroundImage='url("../images/burger_hidden.png")';
     } else{
       infoDisplay.style.display = 'none';
+ //   this.style.backgroundImage= "url('../images/burger_open.png')";
     }
 }
