@@ -157,7 +157,8 @@ a {
     width:100px;
     height:100px;
     position:absolute;
-    display:block;
-    top:10px;
+    display:none;
+    top:60px;
+    right:0;
     background-color: #cec8c883;
 }
