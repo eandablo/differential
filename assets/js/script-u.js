@@ -43,17 +43,25 @@ function infoDisplayButton(){
  * Adds a new sring element
  */
 function addSpring(){
-  let nsprings=0;
+  let nsprings=1;
   if (document.getElementsByClassName('spring-div')[0]){
-    let nSprings= document.getElementsByClassName('spring-div').length;
-    if (nSprings<3){
+    let nSprings= document.getElementsByClassName('spring-div').length+1;
+    //stops producing elements if there are already 3 springs or total elements are 4
+    let nDissipator=0;
+    if (document.getElementsByClassName('dissipator-div')[0]){
+      nDissipator = document.getElementsByClassName('dissipator-div');
+    }
+    let tElements=nSprings+nDissipator;
+    if (nSprings<=3 && tElements<4){
       let newSpring = document.createElement("div");
       newSpring.setAttribute('class', 'spring-div');
       newSpring.setAttribute('id', 'spring-' + nSprings);
       document.getElementById('game-area-left').appendChild(newSpring);
-    } else{
+    } else if (tElements < 4){
       alert('There are already 3 spring elements, you need at least 1 dissipator');
-    }
+    } else{
+      alert('You have exceeded the maximum number of elements');
+    }  
   } else {
     let newSpring = document.createElement("div");
     newSpring.setAttribute('class', 'spring-div');

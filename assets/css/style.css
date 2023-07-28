@@ -244,3 +244,12 @@ a {
     border-radius: 5px;
     background-color: green;
 }
+.dissipator-div {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    right: 0;
+    border-radius: 5px;
+    background-color: red;
+}
