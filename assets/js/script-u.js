@@ -64,6 +64,7 @@ function addSpring(){
     let newSpring = document.createElement("div");
     newSpring.setAttribute('class', 'spring-div');
     newSpring.setAttribute('id','spring-1');
+    newSpring.addEventListener('mousedown',moveDiv);
     document.getElementById('game-area-left').appendChild(newSpring);
   }
 
@@ -97,4 +98,15 @@ function addDissipator() {
     newDissipator.setAttribute('id', 'dissipator-' + nDissipator);
     document.getElementById('game-area-left').appendChild(newDissipator);
   }
+}
+/**
+ * Temporal function to change color of div on mousedown
+ */
+function moveDiv(){
+  this.style.backgroundColor="yellow";
+  document.addEventListener('mousemove',function(event){
+    let xm=event.clientX;
+    this.getElementById('dummy-p').innerHTML=xm
+
+  });
 }
