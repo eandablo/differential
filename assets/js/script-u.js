@@ -131,6 +131,7 @@ function moveDiv(event) {
     let deltaX = event.clientX - xmOld+xdOld;
     let deltaY = event.clientY - ymOld+ydOld;
     let movingDiv = document.getElementById(divId);
+//    document.getElementById('dummy-p').innerText=`x ${deltaX} y ${deltaY}`
     movingDiv.style.left = deltaX + "px";
     movingDiv.style.top = deltaY + "px";
     distanceElement(deltaX,deltaY);
@@ -147,8 +148,16 @@ function freeElement() {
  * locks the element if minimum distance is achived
  */
 function distanceElement(deltaX,deltaY){
-  let fixPoints=[];
-
+  let fixPoints=[[80,100],[80,200],[167,100],[167,200]];
+  let distance=0;
+  let minDist=1000;
+  for (let point of fixPoints){
+    distance=Math.sqrt((deltaX-point[0])**2+(deltaY-point[1])**2);
+    if (distance<minDist){
+      minDist=distance;
+    }
+  }
+  document.getElementById('dummy-p').innerText=minDist;
 }
 /**
  * Erases all divs in order to restart the game
