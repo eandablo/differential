@@ -16,9 +16,9 @@ function loginInfo(){
   }else{
     document.getElementById('user-first-name').innerText=userName.toUpperCase();
   }
-  localStorage.clear();
 }
 loginInfo();
+localStorage.clear();
 document.addEventListener('DOMContentLoaded',function(){
     let infoButton = document.getElementById('user-button');
     infoButton.addEventListener('click',infoDisplayButton);
@@ -27,9 +27,7 @@ function infoDisplayButton(){
     let infoDisplay = document.getElementById('user-info-div');
     if (window.getComputedStyle(infoDisplay).display==='none') {
       infoDisplay.style.display='block';
- //   this.style.backgroundImage='url("../images/burger_hidden.png")';
     } else{
       infoDisplay.style.display = 'none';
- //   this.style.backgroundImage= "url('../images/burger_open.png')";
     }
 }
