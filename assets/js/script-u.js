@@ -133,6 +133,7 @@ function moveDiv(event) {
     let movingDiv = document.getElementById(divId);
     movingDiv.style.left = deltaX + "px";
     movingDiv.style.top = deltaY + "px";
+    distanceElement(deltaX,deltaY);
 }
 /**
  * On mouse up frees element from dragging
@@ -145,7 +146,8 @@ function freeElement() {
  * Calculates the distance between element and holder
  * locks the element if minimum distance is achived
  */
-function distanceElement(){
+function distanceElement(deltaX,deltaY){
+  let fixPoints=[];
 
 }
 /**
