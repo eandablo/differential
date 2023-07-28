@@ -45,11 +45,15 @@ function infoDisplayButton(){
 function addSpring(){
   let nsprings=0;
   if (document.getElementsByClassName('spring-div')[0]){
-    nsprings= document.getElementsByClassName('spring-div').length;
-    let newSpring = document.createElement("div");
-    newSpring.setAttribute('class', 'spring-div');
-    newSpring.setAttribute('id', 'spring-' + nsprings);
-    document.getElementById('game-area-left').appendChild(newSpring);
+    let nSprings= document.getElementsByClassName('spring-div').length;
+    if (nSprings<3){
+      let newSpring = document.createElement("div");
+      newSpring.setAttribute('class', 'spring-div');
+      newSpring.setAttribute('id', 'spring-' + nSprings);
+      document.getElementById('game-area-left').appendChild(newSpring);
+    } else{
+      alert('There are already 3 spring elements, you need at least 1 dissipator');
+    }
   } else {
     let newSpring = document.createElement("div");
     newSpring.setAttribute('class', 'spring-div');
