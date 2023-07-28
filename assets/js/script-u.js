@@ -16,6 +16,7 @@ function loginInfo(){
   }else{
     document.getElementById('user-first-name').innerText=userName.toUpperCase();
   }
+  localStorage.clear();
 }
 loginInfo();
 document.addEventListener('DOMContentLoaded',function(){
