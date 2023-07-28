@@ -39,10 +39,22 @@ function infoDisplayButton(){
     infoDisplay.style.display = 'none';
   }
 }
+/**
+ * Adds a new sring element
+ */
 function addSpring(){
-  let newSpring=document.createElement("div");
-  newSpring.setAttribute('class','spring-div');
-  newSpring.style.width='50px';
-  newSpring.style.height ='50px';
-  document.getElementById('game-area-left').appendChild(newSpring);
+  let nsprings=0;
+  if (document.getElementsByClassName('spring-div')[0]){
+    nsprings= document.getElementsByClassName('spring-div').length;
+    let newSpring = document.createElement("div");
+    newSpring.setAttribute('class', 'spring-div');
+    newSpring.setAttribute('id', 'spring-' + nsprings);
+    document.getElementById('game-area-left').appendChild(newSpring);
+  } else {
+    let newSpring = document.createElement("div");
+    newSpring.setAttribute('class', 'spring-div');
+    newSpring.setAttribute('id','spring-'+nsprings);
+    document.getElementById('game-area-left').appendChild(newSpring);
+  }
+
 }
