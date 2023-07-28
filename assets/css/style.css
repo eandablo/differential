@@ -217,7 +217,7 @@ a {
     margin: 0 auto 0 auto;
 }
 #game-area-left{
-    height:350px;
+    height:370px;
     flex:0 0 300px;
     border: #1b1b1b inset 3px;
     border-radius: 10px;
@@ -237,7 +237,7 @@ a {
     border-radius:5px;
 }
 #game-area-right{
-    height: 350px;
+    height: 370px;
     flex: 0 2 700px;
     border: #1b1b1b inset 3px;
     border-radius: 10px;
