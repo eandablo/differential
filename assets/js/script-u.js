@@ -17,17 +17,32 @@ function loginInfo(){
     document.getElementById('user-first-name').innerText=userName.toUpperCase();
   }
 }
+// call function to load user info
 loginInfo();
-localStorage.clear();
+// clear user info from the local storage
 document.addEventListener('DOMContentLoaded',function(){
-    let infoButton = document.getElementById('user-button');
-    infoButton.addEventListener('click',infoDisplayButton);
+  let infoButton = document.getElementById('user-button');
+  let springButton=document.getElementById('spring-button');
+//  let dissipatorButton=document.getElementById('dissipator-button');
+  infoButton.addEventListener('click',infoDisplayButton);
+  springButton.addEventListener('click',addSpring);
+ // dissipatorButton.addEventListener('click',function);
 });
+/**
+ * shows or hides the information when the burger button is pressed
+ */
 function infoDisplayButton(){
-    let infoDisplay = document.getElementById('user-info-div');
-    if (window.getComputedStyle(infoDisplay).display==='none') {
-      infoDisplay.style.display='block';
-    } else{
-      infoDisplay.style.display = 'none';
-    }
+  let infoDisplay = document.getElementById('user-info-div');
+  if (window.getComputedStyle(infoDisplay).display==='none') {
+    infoDisplay.style.display='block';
+  } else{
+    infoDisplay.style.display = 'none';
+  }
+}
+function addSpring(){
+  let newSpring=document.createElement("div");
+  newSpring.setAttribute('class','spring-div');
+  newSpring.style.width='50px';
+  newSpring.style.height ='50px';
+  document.getElementById('game-area-left').appendChild(newSpring);
 }
