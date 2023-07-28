@@ -106,7 +106,6 @@ function moveDiv(){
   this.style.backgroundColor="yellow";
   document.addEventListener('mousemove',function(event){
     let xm=event.clientX;
-    this.getElementById('dummy-p').innerHTML=xm
-
+    document.getElementById('dummy-p').innerHTML=xm
   });
 }

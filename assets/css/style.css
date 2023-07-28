@@ -228,6 +228,13 @@ a {
     height:50px;
     width:100%;
 }
+.game-buttons{
+    width:80px;
+    height:35px;
+    margin:5px 5px 0 5px;
+    color:#fff;
+    background-color: #1b1b1b;
+}
 #game-area-right{
     height: 350px;
     flex: 0 2 700px;
