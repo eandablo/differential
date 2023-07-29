@@ -140,7 +140,7 @@ function moveDiv(event) {
     distanceElement(deltaX,deltaY,movingDiv);
 }
 /**
- * On mouse up frees element from dragging
+ * On mouse up frees element from dragging by removing event listeners
  */
 function freeElement() {
     document.removeEventListener('mousemove', moveDiv);
@@ -161,7 +161,13 @@ function distanceElement(deltaX,deltaY,movingDiv){
     }
   }
   if (minDist<4){
-    movingDiv.innerText='S'
+    if (movingDiv.getAttribute('class')==='spring-div'){
+      movingDiv.innerText = 'S'
+        freeElement();
+    } else{
+        movingDiv.innerText = 'D'
+        freeElement();
+    }
   }
 //  document.getElementById('dummy-p').innerText=minDist;
 }
