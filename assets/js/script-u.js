@@ -123,10 +123,13 @@ function prepareDiv(event) {;
 Updates position of the selected div with the mouse coordinates
  */
 function moveDiv(event) {
+    // Getting past coordinates of mouse
     let xmOld = parseInt(document.getElementById('holder1').textContent);
     let ymOld = parseInt(document.getElementById('holder2').textContent);
+    // Getting past coordinates of the div
     let xdOld=parseInt(document.getElementById('holder4').textContent);
     let ydOld = parseInt(document.getElementById('holder5').textContent);
+    // Reading id of the moving div
     let divId = document.getElementById('holder3').textContent;
     let deltaX = event.clientX - xmOld+xdOld;
     let deltaY = event.clientY - ymOld+ydOld;
@@ -134,7 +137,7 @@ function moveDiv(event) {
 //    document.getElementById('dummy-p').innerText=`x ${deltaX} y ${deltaY}`
     movingDiv.style.left = deltaX + "px";
     movingDiv.style.top = deltaY + "px";
-    distanceElement(deltaX,deltaY);
+    distanceElement(deltaX,deltaY,movingDiv);
 }
 /**
  * On mouse up frees element from dragging
@@ -147,7 +150,7 @@ function freeElement() {
  * Calculates the distance between element and holder
  * locks the element if minimum distance is achived
  */
-function distanceElement(deltaX,deltaY){
+function distanceElement(deltaX,deltaY,movingDiv){
   let fixPoints=[[80,100],[80,200],[167,100],[167,200]];
   let distance=0;
   let minDist=1000;
@@ -157,7 +160,10 @@ function distanceElement(deltaX,deltaY){
       minDist=distance;
     }
   }
-  document.getElementById('dummy-p').innerText=minDist;
+  if (minDist<4){
+    movingDiv.innerText='S'
+  }
+//  document.getElementById('dummy-p').innerText=minDist;
 }
 /**
  * Erases all divs in order to restart the game
