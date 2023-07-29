@@ -162,6 +162,7 @@ function distanceElement(deltaX,deltaY,movingDiv){
       closestCoor=point;
     }
   }
+ 
   if (minDist<4){
     if (movingDiv.getAttribute('class')==='spring-div'){
       movingDiv.innerText = 'S'
@@ -170,9 +171,9 @@ function distanceElement(deltaX,deltaY,movingDiv){
     }
     freeElement();
     movingDiv.style.left = closestCoor[0] + "px";
-    movingDiv.style.left = closestCoor[1] + "px"
+    movingDiv.style.top = closestCoor[1] + "px"
   }
-//  document.getElementById('dummy-p').innerText=minDist;
+  
 }
 /**
  * Erases all divs in order to restart the game
