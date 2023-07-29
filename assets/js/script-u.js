@@ -60,9 +60,9 @@ function addSpring() {
             newSpring.addEventListener('mousedown', prepareDiv);
             document.getElementById('game-area-left').appendChild(newSpring);
         } else if (tElements < 4) {
-            alert(`Total of springs is 3 you need at least one dissipator`);
+            alert(`There are already 3 spring elements, you need at least 1 disspator`);
         } else {
-            alert(`number of elements is ${tElements}`);
+            alert(`You have exceeded the maximum number of elements`);
         }
     } else {
         let newSpring = document.createElement("div");
@@ -93,7 +93,7 @@ function addDissipator() {
             newDissipator.addEventListener('mousedown', prepareDiv);
             document.getElementById('game-area-left').appendChild(newDissipator);
         } else if (tElements < 4) {
-            alert('There are already 3 dissipator elements, you need at least 1 dissipator');
+            alert('There are already 3 dissipator elements, you need at least 1 spring');
         } else {
             alert('You have exceeded the maximum number of elements');
         }
@@ -152,22 +152,25 @@ function freeElement() {
  */
 function distanceElement(deltaX,deltaY,movingDiv){
   let fixPoints=[[80,100],[80,200],[167,100],[167,200]];
+  let closestCoor;
   let distance=0;
   let minDist=1000;
   for (let point of fixPoints){
     distance=Math.sqrt((deltaX-point[0])**2+(deltaY-point[1])**2);
     if (distance<minDist){
       minDist=distance;
+      closestCoor=point;
     }
   }
   if (minDist<4){
     if (movingDiv.getAttribute('class')==='spring-div'){
       movingDiv.innerText = 'S'
-        freeElement();
     } else{
-        movingDiv.innerText = 'D'
-        freeElement();
+      movingDiv.innerText = 'D'
     }
+    freeElement();
+    movingDiv.style.left = closestCoor[0] + "px";
+    movingDiv.style.left = closestCoor[1] + "px"
   }
 //  document.getElementById('dummy-p').innerText=minDist;
 }
