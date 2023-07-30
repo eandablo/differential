@@ -282,10 +282,10 @@ a {
 } 
 /* Game area table */
 table{
-    margin:30px auto 0 auto;
+    margin:10px auto 0 auto;
 }
 td,th{
     width:120px;
-    height:50px;
+    height:70px;
     border:#1b1b1b 2px solid;
 }

@@ -163,8 +163,9 @@ function distanceElement(deltaX,deltaY,movingDiv){
       closestCoor=point;
     }
   }
- //Labels the element whenn about to be anchored
-  if (minDist<4){
+  let tableCells=document.getElementsByTagName('td');
+ //Labels the element when about to be anchored
+  if (minDist<4 && tableCells[closestCoor[2]].innerText===''){
     if (movingDiv.getAttribute('class')==='spring-div'){
       movingDiv.innerText = 'S'
     } else{
