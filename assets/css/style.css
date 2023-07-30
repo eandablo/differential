@@ -145,6 +145,9 @@ a {
     height: 80px;
     position:relative;
 }
+#header-div h1{
+    margin:10px 0 0 10px;
+}
 #user-button{
     width:30px;
     height:30px;
@@ -167,7 +170,6 @@ a {
 #user-info-div a{
     color:#1b1b1b;
 }
-
 #user-info-div > h3{
     margin:20px 0 20px 20px;
 }
@@ -181,11 +183,9 @@ a {
     height:400px;
     text-align: center;
 }
-
 #instructions>h2{
     margin:60px auto 20px auto;
 }
-
 #instructions > div{
     width:95%;
     height:300px;
