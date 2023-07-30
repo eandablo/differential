@@ -140,7 +140,7 @@ function moveDiv(event) {
     distanceElement(deltaX,deltaY,movingDiv);
 }
 /**
- * On mouse up frees element from dragging by removing event listeners
+ * On mouse up frees element from dragging by removing event listeners of movingDiv
  */
 function freeElement() {
     document.removeEventListener('mousemove', moveDiv);
@@ -151,10 +151,11 @@ function freeElement() {
  * locks the element if minimum distance is achived
  */
 function distanceElement(deltaX,deltaY,movingDiv){
-  let fixPoints=[[80,100],[80,200],[167,100],[167,200]];
+  let fixPoints=[[80,100,0],[80,200,3],[167,100,1],[167,200,4]];
   let closestCoor;
   let distance=0;
   let minDist=1000;
+  //Calculates distance to all clamping points in game area and chosses the closest point
   for (let point of fixPoints){
     distance=Math.sqrt((deltaX-point[0])**2+(deltaY-point[1])**2);
     if (distance<minDist){
@@ -162,7 +163,7 @@ function distanceElement(deltaX,deltaY,movingDiv){
       closestCoor=point;
     }
   }
- 
+ //Labels the element whenn about to be anchored
   if (minDist<4){
     if (movingDiv.getAttribute('class')==='spring-div'){
       movingDiv.innerText = 'S'
@@ -170,15 +171,26 @@ function distanceElement(deltaX,deltaY,movingDiv){
       movingDiv.innerText = 'D'
     }
     freeElement();
+    //anchoring element to the closest clamping point
     movingDiv.style.left = closestCoor[0] + "px";
     movingDiv.style.top = closestCoor[1] + "px"
+    let elementId=movingDiv.getAttribute('id');
+    tableUpdate(elementId,closestCoor[2]);
   }
-  
+}
+/**
+ * Uptades the game area table when an element is anchored
+ */
+function tableUpdate(elementId, closestCoor){
+  let tableCells=document.getElementsByTagName('td');
+//  document.getElementById('dummy-p').innerText = `x ${tableCells.length} y ${closestCoor}`;
+  tableCells[closestCoor].innerText=elementId;
 }
 /**
  * Erases all divs in order to restart the game
  */
 function resetGame(){
+//Remove spring elements from game area
   if (document.getElementsByClassName('spring-div')[0]){
     let springElements=document.getElementsByClassName('spring-div');
     let nSprings=springElements.length;
@@ -186,11 +198,17 @@ function resetGame(){
       springElements[0].remove();
     }
   }
+//Remove disspator elements from game area
   if (document.getElementsByClassName('dissipator-div')[0]) {
     let springElements = document.getElementsByClassName('dissipator-div');
     let nSprings = springElements.length;
     for (let i = 0; i < nSprings; i++) {
       springElements[0].remove();
     }
-  }  
+  }
+//clear all table cells in the table area
+  let tableCells=document.getElementsByTagName('td')
+  for (cell of tableCells){
+    cell.innerText="";
+  } 
 }
