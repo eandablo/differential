@@ -154,18 +154,18 @@ a {
     background:url('../images/burger_open.png') center center / cover no-repeat;
 }
 #user-info-div{
-    width:200px;
+    width:100%;
     height:200px;
     position:absolute;
     display:none;
     top:40px;
     right:0;
-    background-color: #1b1b1b;
-    color:#fff;
+    background-color: #fff;
+    color: #1b1b1b;;
     z-index: 2;
 }
 #user-info-div a{
-    color:#fff;
+    color:#1b1b1b;
 }
 
 #user-info-div > h3{
