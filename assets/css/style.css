@@ -242,7 +242,8 @@ a {
     height:35px;
     margin:5px 3px 0 3px;
     color:#fff;
-    background-color: #1b1b1b;
+    background-color: gray;
+    border:#1b1b1b 2px outset;
     border-radius:5px;
 }
 #game-area-center {
