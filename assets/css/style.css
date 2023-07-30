@@ -249,6 +249,7 @@ a {
     border: #1b1b1b inset 3px;
     border-radius: 10px;
     margin:20px;
+    padding-top: 20px;
 }
 .spring-div{
     position:absolute;
@@ -274,8 +275,17 @@ a {
     padding: 10px;
     font-size: 150%;
 }
-
+/* Remove from diplay all data holders for javascript functions*/
 #holder1,#holder2,#holder3,#holder4,
 #holder5{
     display:none;
 } 
+/* Game area table */
+table{
+    margin:50px auto 0 auto;
+}
+td,th{
+    width:120px;
+    height:50px;
+    border:#1b1b1b 2px solid;
+}
