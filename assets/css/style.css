@@ -195,10 +195,19 @@ a {
     justify-content: space-around;
     margin:0 auto 0 auto;
 }
-.instruction-child{
+.instruction-child-black{
     flex: 0 0 250px;
     height:250px;
     margin: 20px;
+    background-color: rgb(255, 169, 87);
+    border: #1b1b1b inset 3px;
+    border-radius: 10px;
+}
+.instruction-child-blue {
+    flex: 0 0 250px;
+    height: 250px;
+    margin: 20px;
+    background-color: grey;
     border: #1b1b1b inset 3px;
     border-radius: 10px;
 }
