@@ -151,7 +151,7 @@ function freeElement() {
  * locks the element if minimum distance is achived
  */
 function distanceElement(deltaX,deltaY,movingDiv){
-  let fixPoints=[[80,100,0],[80,200,3],[167,100,1],[167,200,4]];
+  let fixPoints=[[95,100,0],[95,200,3],[167,100,1],[167,200,4]];
   let closestCoor;
   let distance=0;
   let minDist=1000;
@@ -166,11 +166,11 @@ function distanceElement(deltaX,deltaY,movingDiv){
   let tableCells=document.getElementsByTagName('td');
  //Labels the element when about to be anchored
   if (minDist<4 && tableCells[closestCoor[2]].innerText===''){
-    if (movingDiv.getAttribute('class')==='spring-div'){
-      movingDiv.innerText = 'S'
-    } else{
-      movingDiv.innerText = 'D'
-    }
+//    if (movingDiv.getAttribute('class')==='spring-div'){
+//      movingDiv.innerText = 'S'
+//    } else{
+//      movingDiv.innerText = 'D'
+//    }
     freeElement();
     //anchoring element to the closest clamping point
     movingDiv.style.left = closestCoor[0] + "px";

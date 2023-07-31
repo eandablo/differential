@@ -1,34 +1,34 @@
 /* clear all padding, border, margin from all boxes */
-*{
-    border:none;
+* {
+    border: none;
     padding: 0;
-    margin:0;
+    margin: 0;
     box-sizing: border-box;
 }
 
 /* Login page right left image holder*/
 
-#outer-login-page{
-    display:grid;
+#outer-login-page {
+    display: grid;
     grid-template-columns: 40% 60%;
     justify-content: space-around;
-    width:100%;
+    width: 100%;
     height: 100vh;
 }
 
 #login-img {
-    height:100%;
+    height: 100%;
     width: 100%;
-    background:url('../images/login_image.webp') center center/ cover no-repeat;
+    background: url('../images/login_image.webp') center center/ cover no-repeat;
 }
 
-#login-img div{
-    padding-top:50px;
-    margin:230px auto 0 auto;
-    width:300px;
-    height:150px;
-    background-color: rgba(0,0,0,0.6);
-    color:#fff;
+#login-img div {
+    padding-top: 50px;
+    margin: 230px auto 0 auto;
+    width: 300px;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
     text-transform: uppercase;
     text-align: center;
 }
@@ -38,77 +38,78 @@
     width: 100%;
 }
 
-#login-holder ul{
+#login-holder ul {
     list-style-type: none;
     text-align: end;
 }
 
 #login-holder li {
- display:inline-block;
- margin-right:10px;
+    display: inline-block;
+    margin-right: 10px;
 }
 
 a {
     text-decoration: none;
 }
 
-#login-holder div{
+#login-holder div {
     text-align: center;
-    width:100%;
+    width: 100%;
     text-transform: uppercase;
 }
 
-#login-field{
-    margin:100px auto 0 auto;
+#login-field {
+    margin: 100px auto 0 auto;
     text-align: left;
-    width:250px;
-    height:250px;
-    border:3px inset #1b1b1b;
+    width: 250px;
+    height: 250px;
+    border: 3px inset #1b1b1b;
     border-radius: 10px;
     padding-top: 30px;
-    padding-left:20px;
+    padding-left: 20px;
 }
 
-#login-field legend{
-    margin-left:15px;
+#login-field legend {
+    margin-left: 15px;
 }
 
 .login-input {
-    border:#1b1b1b solid 2px;
+    border: #1b1b1b solid 2px;
     border-radius: 3px;
-    margin-top:5px;
+    margin-top: 5px;
     margin-bottom: 15px;
-    width:200px;
-    height:25px;
+    width: 200px;
+    height: 25px;
 }
 
-.login-input:hover{
-    border-color: red;
+.login-input:hover {
+    border-color: #a75910;
 }
 
 .login-input:focus {
     background-color: #fa7d92;
 }
 
-#login-button{
-    height:30px;
-    width:60px;
-    border:#5e5959 1px inset;
+#login-button {
+    height: 40px;
+    width: 80px;
+    border: #1b1b1b 2px inset;
     border-radius: 3px;
-    margin-top:10px;
+    margin-top: 10px;
+    background-color: #5e5959;
+    color: #fff;
 }
 
-#login-button:hover{
-    background-color: #fa7d92;
-}
-
-#suscribe-link-div{
-    width:100%;
-    text-align:center;
-    margin: 50px auto 0 auto;
+#login-button:hover {
+    background-color: #a75910;
 }
 
 /* Suscribe page */
+#suscribe-link-div {
+    width: 100%;
+    text-align: center;
+    margin: 50px auto 0 auto;
+}
 
 #suscribe-field {
     margin: 75px auto 0 auto;
@@ -126,97 +127,113 @@ a {
 }
 
 #suscribe-button {
-    height: 30px;
-    width: 60px;
-    border: #5e5959 1px inset;
+    height: 40px;
+    width: 80px;
+    border: #1b1b1b 2px inset;
     border-radius: 3px;
     margin-top: 10px;
+    background-color: #5e5959;
+    color: #fff;
 }
 
 #suscribe-button:hover {
-    background-color: #fa7d92;
+    background-color: #a75910;
 }
 
 /* User page*/
-#header-div{
-    display:grid;
+#header-div {
+    display: grid;
     grid-template-columns: 70% 30%;
-    width:100%;
+    width: 100%;
     height: 80px;
-    position:relative;
+    position: relative;
 }
-#header-div h1{
-    margin:10px 0 0 10px;
+
+#header-div h1 {
+    margin: 10px 0 0 10px;
 }
-#user-button{
-    width:30px;
-    height:30px;
-    position:absolute;
-    top:10px;
-    right:10px;
-    background:url('../images/burger_open.png') center center / cover no-repeat;
+
+#user-button {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: url('../images/burger_open.png') center center / cover no-repeat;
 }
-#user-info-div{
-    width:100%;
-    height:200px;
-    position:absolute;
-    display:none;
-    top:40px;
-    right:0;
+
+#user-info-div {
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    display: none;
+    top: 40px;
+    right: 0;
     background-color: #fff;
-    color: #1b1b1b;;
+    color: #1b1b1b;
+    ;
     z-index: 2;
 }
-#user-info-div a{
-    color:#1b1b1b;
+
+#user-info-div a {
+    color: #1b1b1b;
 }
-#user-info-div > h3{
-    margin:20px 0 20px 20px;
+
+#user-info-div>h3 {
+    margin: 20px 0 20px 20px;
 }
-#hero-image{
-    height:100px;
-    width:100%;
+
+#hero-image {
+    height: 100px;
+    width: 100%;
     background: url('../images/hero_image.webp') center center / cover no-repeat;
 }
-#instructions{
-    width:100%;
-    height:400px;
+
+#instructions {
+    width: 100%;
+    height: 400px;
     text-align: center;
 }
-#instructions>h2{
-    margin:60px auto 20px auto;
+
+#instructions>h2 {
+    margin: 60px auto 20px auto;
 }
-#instructions > div{
-    width:95%;
-    height:300px;
-    display:flex;
-    flex-wrap:wrap;
+
+#instructions>div {
+    width: 95%;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-    margin:0 auto 0 auto;
+    margin: 0 auto 0 auto;
 }
-.instruction-child-black{
+
+.instruction-child-black {
     flex: 0 0 250px;
-    height:250px;
+    height: 250px;
     margin: 20px;
-    background-color: rgb(255, 169, 87);
+    background-color: #a75910;
     border: #1b1b1b inset 3px;
     border-radius: 10px;
 }
+
 .instruction-child-blue {
     flex: 0 0 250px;
     height: 250px;
     margin: 20px;
-    background-color: grey;
+    background-color: #5e5959;
     border: #1b1b1b inset 3px;
     border-radius: 10px;
 }
-#game-area{
+
+#game-area {
     text-align: center;
     width: 100%;
     height: 470px;
 }
-#game-area>div{
+
+#game-area>div {
     width: 95%;
     height: 450px;
     display: flex;
@@ -225,27 +242,31 @@ a {
     justify-content: space-around;
     margin: 0 auto 0 auto;
 }
-#game-area-left{
-    height:370px;
-    flex:0 0 300px;
+
+#game-area-left {
+    height: 370px;
+    flex: 0 0 300px;
     border: #1b1b1b inset 3px;
     border-radius: 10px;
     margin: 20px;
-    position:relative;
+    position: relative;
 }
-#game-buttons-area{
-    height:50px;
-    width:100%;
+
+#game-buttons-area {
+    height: 50px;
+    width: 100%;
 }
-.game-buttons{
-    width:85px;
-    height:35px;
-    margin:5px 3px 0 3px;
-    color:#fff;
-    background-color: gray;
-    border:#1b1b1b 2px outset;
-    border-radius:5px;
+
+.game-buttons {
+    width: 85px;
+    height: 35px;
+    margin: 5px 3px 0 3px;
+    color: #fff;
+    background-color: #5e5959;
+    border: #1b1b1b 2px outset;
+    border-radius: 5px;
 }
+
 #game-area-center {
     height: 370px;
     flex: 0 1 400px;
@@ -253,49 +274,58 @@ a {
     border-radius: 10px;
     margin: 20px;
 }
-#game-area-right{
+
+#game-area-right {
     height: 370px;
     flex: 0 1 400px;
     border: #1b1b1b inset 3px;
     border-radius: 10px;
-    margin:20px;
+    margin: 20px;
     padding-top: 20px;
 }
-.spring-div{
-    position:absolute;
-    width:50px;
-    height:50px;
-    top:0;
-    left:0;
+
+.spring-div {
+    position: absolute;
+    width: 35px;
+    height: 50px;
+    top: 0;
+    left: 0;
     border-radius: 5px;
-    background-color: green;
-    color:#fff;
-    padding:10px;
+    background: url('../images/spring_icon.png') center center / cover no-repeat;
+    padding: 10px;
     font-size: 150%;
 }
+
 .dissipator-div {
     position: absolute;
-    width: 50px;
+    width: 35px;
     height: 50px;
     top: 0;
     right: 0;
     border-radius: 5px;
-    background-color: red;
+    background: url('../images/dissipator_icon.png') center center / cover no-repeat;
     color: #fff;
     padding: 10px;
     font-size: 150%;
 }
+
 /* Remove from diplay all data holders for javascript functions*/
-#holder1,#holder2,#holder3,#holder4,
-#holder5{
-    display:none;
-} 
-/* Game area table */
-table{
-    margin:10px auto 0 auto;
+#holder1,
+#holder2,
+#holder3,
+#holder4,
+#holder5 {
+    display: none;
 }
-td,th{
-    width:120px;
-    height:70px;
-    border:#1b1b1b 2px solid;
+
+/* Game area table */
+table {
+    margin: 10px auto 0 auto;
+}
+
+td,
+th {
+    width: 100px;
+    height: 70px;
+    border: #1b1b1b 2px solid;
 }
