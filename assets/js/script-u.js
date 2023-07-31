@@ -110,7 +110,7 @@ function addDissipator() {
  * on mouse up call the function to free the element from dragging
  */
 function prepareDiv(event) {;
-    divId = this.getAttribute('id');
+    let divId = this.getAttribute('id');
     document.getElementById('holder1').innerText = event.clientX;
     document.getElementById('holder2').innerText = event.clientY;
     document.getElementById('holder3').innerText = this.getAttribute('id');
@@ -134,7 +134,6 @@ function moveDiv(event) {
     let deltaX = event.clientX - xmOld+xdOld;
     let deltaY = event.clientY - ymOld+ydOld;
     let movingDiv = document.getElementById(divId);
-//    document.getElementById('dummy-p').innerText=`x ${deltaX} y ${deltaY}`
     movingDiv.style.left = deltaX + "px";
     movingDiv.style.top = deltaY + "px";
     distanceElement(deltaX,deltaY,movingDiv);
@@ -175,6 +174,8 @@ function distanceElement(deltaX,deltaY,movingDiv){
     movingDiv.style.top = closestCoor[1] + "px"
     let elementClass=movingDiv.getAttribute('class');
     tableUpdate(elementClass,closestCoor[2]);
+    //temporary statement
+      createDiffEquation();
   }
 }
 /**
@@ -218,3 +219,21 @@ function resetGame(){
     cell.children[1].innerHTML = "";
   } 
 }
+
+/**
+ * Creates text for the central about of game area updating the differential equation
+that represents the current program
+*/
+function createDiffEquation(){
+
+  let tableCells=document.getElementsByTagName('td')
+  let cellValue=0;
+  for (let i=0;i<4;i++){
+    if (tableCells[i].children[0].innerText!==""){
+      cellValue+=10**i;
+    }
+  }
+    document.getElementById('dummy-p').innerText = cellValue;
+  
+}
+
