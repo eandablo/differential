@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300&display=swap');
 /* clear all padding, border, margin from all boxes */
 * {
     border: none;
@@ -5,7 +6,12 @@
     margin: 0;
     box-sizing: border-box;
 }
+/*Body Font family*/
 
+body{
+    font-family: 'Bitter','Sans';
+    font-weight: 600;
+}
 /* Login page right left image holder*/
 
 #outer-login-page {
@@ -328,4 +334,5 @@ th {
     width: 120px;
     height: 70px;
     border: #1b1b1b 2px solid;
+    font-size: 120%;
 }
