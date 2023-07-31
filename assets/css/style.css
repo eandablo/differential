@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300&display=swap');
+
 /* clear all padding, border, margin from all boxes */
 * {
     border: none;
@@ -6,12 +7,14 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 /*Body Font family*/
 
-body{
-    font-family: 'Bitter','Sans';
+body {
+    font-family: 'Bitter', 'Sans';
     font-weight: 600;
 }
+
 /* Login page right left image holder*/
 
 #outer-login-page {
@@ -62,6 +65,7 @@ a {
     text-align: center;
     width: 100%;
     text-transform: uppercase;
+    margin-top: 20px;
 }
 
 #login-field {
@@ -335,4 +339,23 @@ th {
     height: 70px;
     border: #1b1b1b 2px solid;
     font-size: 120%;
+}
+
+
+
+
+/* Adding responsiveness for tablets and mobiles */
+@media screen and (max-width:900px) {
+    #outer-login-page {
+        grid-template-columns:100%;
+        grid-template-rows: 150px 800px;
+        justify-content: space-around;
+        width: 100%;
+        height:1000px;
+    }
+        #login-img div {
+            margin: 40px auto 0 auto;
+            height:60px;
+            padding:10px;
+        }
 }
