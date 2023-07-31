@@ -151,7 +151,7 @@ function freeElement() {
  * locks the element if minimum distance is achived
  */
 function distanceElement(deltaX,deltaY,movingDiv){
-  let fixPoints=[[95,100,0],[95,200,2],[167,100,1],[167,200,3]];
+  let fixPoints=[[95,100,0],[95,200,2],[167,100,1],[167,200,3]]; //anchoring positions
   let closestCoor;
   let distance=0;
   let minDist=1000;
@@ -164,7 +164,9 @@ function distanceElement(deltaX,deltaY,movingDiv){
     }
   }
   let tableCells=document.getElementsByTagName('td');
- //Labels the element when about to be anchored
+ /*Anchoring the element by removing event listener for mousedown locking the element
+  and sets top and left of element to the anchoring positions
+  Updates the table with element by calling tableUpdate*/
   if (minDist<15 && tableCells[closestCoor[2]].innerText===''){
     freeElement();
     movingDiv.removeEventListener('mousedown', prepareDiv);
@@ -182,13 +184,12 @@ function tableUpdate(elementClass, closestCoor){
   let tableCells=document.getElementsByTagName('td');
 // set background image to show stress euqation using a class attribute
   if (elementClass==="spring-div"){
-    tableCells[closestCoor].setAttribute('class','cell-spring');
-    tableCells[closestCoor].children[0].innerText="SPRING (S)"
+    tableCells[closestCoor].children[0].innerHTML = "SPRING";
+    tableCells[closestCoor].children[1].innerHTML = "&sigma; = k &gamma;";
   }else{
-    tableCells[closestCoor].setAttribute('class', 'cell-dissipator');
-    tableCells[closestCoor].children[0].innerText = "DISSIPATOR (D)"
+    tableCells[closestCoor].children[0].innerHTML = "DISSIPATOR";
+    tableCells[closestCoor].children[1].innerHTML = "&sigma; = &eta; d&gamma;/dt";
   }
-//    document.getElementById('dummy-p').innerText = tableCells[closestCoor].getAttribute('class');
 }
 /**
  * Erases all divs in order to restart the game
@@ -213,8 +214,7 @@ function resetGame(){
 //clear all table cells in the table area
   let tableCells=document.getElementsByTagName('td')
   for (let cell of tableCells){
-    cell.children[0].innerText="";
-    cell.removeAttribute('class');
+    cell.children[0].innerHTML="";
+    cell.children[1].innerHTML = "";
   } 
-
 }
