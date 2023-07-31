@@ -151,7 +151,7 @@ function freeElement() {
  * locks the element if minimum distance is achived
  */
 function distanceElement(deltaX,deltaY,movingDiv){
-  let fixPoints=[[95,100,0],[95,200,3],[167,100,1],[167,200,4]];
+  let fixPoints=[[95,100,0],[95,200,2],[167,100,1],[167,200,3]];
   let closestCoor;
   let distance=0;
   let minDist=1000;
@@ -165,27 +165,30 @@ function distanceElement(deltaX,deltaY,movingDiv){
   }
   let tableCells=document.getElementsByTagName('td');
  //Labels the element when about to be anchored
-  if (minDist<4 && tableCells[closestCoor[2]].innerText===''){
-//    if (movingDiv.getAttribute('class')==='spring-div'){
-//      movingDiv.innerText = 'S'
-//    } else{
-//      movingDiv.innerText = 'D'
-//    }
+  if (minDist<15 && tableCells[closestCoor[2]].innerText===''){
     freeElement();
+    movingDiv.removeEventListener('mousedown', prepareDiv);
     //anchoring element to the closest clamping point
     movingDiv.style.left = closestCoor[0] + "px";
     movingDiv.style.top = closestCoor[1] + "px"
-    let elementId=movingDiv.getAttribute('id');
-    tableUpdate(elementId,closestCoor[2]);
+    let elementClass=movingDiv.getAttribute('class');
+    tableUpdate(elementClass,closestCoor[2]);
   }
 }
 /**
  * Uptades the game area table when an element is anchored
  */
-function tableUpdate(elementId, closestCoor){
+function tableUpdate(elementClass, closestCoor){
   let tableCells=document.getElementsByTagName('td');
-//  document.getElementById('dummy-p').innerText = `x ${tableCells.length} y ${closestCoor}`;
-  tableCells[closestCoor].innerText=elementId;
+// set background image to show stress euqation using a class attribute
+  if (elementClass==="spring-div"){
+    tableCells[closestCoor].setAttribute('class','cell-spring');
+    tableCells[closestCoor].children[0].innerText="SPRING (S)"
+  }else{
+    tableCells[closestCoor].setAttribute('class', 'cell-dissipator');
+    tableCells[closestCoor].children[0].innerText = "DISSIPATOR (D)"
+  }
+//    document.getElementById('dummy-p').innerText = tableCells[closestCoor].getAttribute('class');
 }
 /**
  * Erases all divs in order to restart the game
@@ -209,7 +212,9 @@ function resetGame(){
   }
 //clear all table cells in the table area
   let tableCells=document.getElementsByTagName('td')
-  for (cell of tableCells){
-    cell.innerText="";
+  for (let cell of tableCells){
+    cell.children[0].innerText="";
+    cell.removeAttribute('class');
   } 
+
 }

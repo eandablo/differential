@@ -325,7 +325,15 @@ table {
 
 td,
 th {
-    width: 100px;
+    width: 120px;
     height: 70px;
     border: #1b1b1b 2px solid;
+}
+.cell-spring{
+    vertical-align: top;
+    background: url('../images/spring_equation.png') center center / cover no-repeat;
+}
+.cell-dissipator{
+    vertical-align: top;
+    background: url('../images/dissipator_equation.png') center center / cover no-repeat;
 }
