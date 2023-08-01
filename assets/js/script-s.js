@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function(){
-  document.getElementById('suscribe-button').addEventListener('click', loginFunction);
+  document.getElementById('suscribe-button').addEventListener('click', suscribeFunction);
 });
 
 /**
 *Reads info from suscribe form 
 *if criteria are satisfied logs user in with its newly created account
  */
-function loginFunction(event) {
+function suscribeFunction(event) {
   event.preventDefault();
   let usersInfo = ['e@gmail.com','l@gmail.com'];
   let userName=document.getElementById('fname').value;
