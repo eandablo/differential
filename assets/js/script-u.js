@@ -225,15 +225,57 @@ function resetGame(){
 that represents the current program
 */
 function createDiffEquation(){
-
+  let elementSelector={
+    1:1, //single spring
+    10:1,
+    100:1,
+    1000:1,
+    2:2, //single dissipator
+    20:2,
+    200:2,
+    2000:2,
+    11:3, //parallel springs
+    1100:3,
+    101:4, //springs in series
+    1001:4,
+    110:4,
+    1010:4,
+    202: 5, //dissipators in series
+    2002: 5,
+    220: 5,
+    2020: 5,
+    0022:6, //parallel dissipators
+    2200:6,
+    12:7, //voigt model
+    21:7,
+    1200:7,
+    2100:7,
+    201:8, //maxwell model
+    102:8,
+    1020:8,
+    2010:8,
+    1002:8,
+    2001:8,
+    210:8,
+    120:8,
+    111:9, //three springs
+    1011:9,
+    1110:9,
+    1101:9,
+    222: 10, //three dissipators
+    2022: 10,
+    2220: 10,
+    2202: 10
+  };
   let tableCells=document.getElementsByTagName('td')
   let cellValue=0;
   for (let i=0;i<4;i++){
-    if (tableCells[i].children[0].innerText!==""){
+    if (tableCells[i].children[0].innerText==="SPRING"){
       cellValue+=10**i;
+    } else if (tableCells[i].children[0].innerText === "DISSIPATOR"){
+      cellValue += 2*10 ** i;
     }
   }
-    document.getElementById('dummy-p').innerText = cellValue;
-  
+  document.getElementById('dummy-p').innerText = elementSelector[cellValue];
 }
 
