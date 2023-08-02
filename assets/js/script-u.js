@@ -335,58 +335,57 @@ function createDiffEquation(){
 function writeEquation(selection){
     switch (selection){
       case 3:
-            document.getElementById('game-area-center').innerHTML =`<h3>Voigt Element</h3>
-            <h4>Stress(&sigma;) = Spring + Dissipator</h4>
-            <h4>Strain(&gamma;) = Spring = Dissipator</h4>
-            <h4>The Equation is then:</h4>
-            <h4>&sigma; = (1/k) &gamma; +  (1/&eta;) d&gamma;/dt</h4>`;
+        document.getElementById('game-area-center').innerHTML =`<h3>Voigt Element</h3>
+        <h4>Stress(&sigma;) = Spring + Dissipator</h4>
+        <h4>Strain(&gamma;) = Spring = Dissipator</h4>
+        <h4>The Equation is then:</h4>
+        <h4>&sigma; = (1/k) &gamma; +  (1/&eta;) d&gamma;/dt</h4>`;
         break;
       case 4:
-            document.getElementById('game-area-center').innerHTML = `<h3>Maxwell Element</h3>
-            <h4>Stress(&sigma;) = Spring = Dissipator</h4>
-            <h4>Strain(&gamma;) = Spring + Dissipator</h4>
-            <h4>The Equation is then:</h4>
-            <h4>&gamma; = k &sigma; +  &eta; d&sigma;/dt</h4>`;
+        document.getElementById('game-area-center').innerHTML = `<h3>Maxwell Element</h3>
+        <h4>Stress(&sigma;) = Spring = Dissipator</h4>
+        <h4>Strain(&gamma;) = Spring + Dissipator</h4>
+        <h4>The Equation is then:</h4>
+        <h4>&gamma; = k &sigma; +  &eta; d&sigma;/dt</h4>`;
         break;
       case 5:
-            document.getElementById('game-area-center').innerHTML = `<h3>Voigt Element and Spring In Series</h3>
-            <h4>Voigt Stress(&sigma;1) = Spring = Dissipator</h4>
-            <h4>Voigt Strain(&gamma;1) = Spring + Dissipator</h4>
-            <h4>The equation for Voigt is:</h4>
-            <h4>&sigma;1 = k &gamma;1 +  &eta; d&gamma;1/dt</h4>
-            <h4>The additional spring</h4>
-            <h4>Stress(&sigma;) = Voigt(&sigma;1) = Spring(&sigma;2)</h4>
-            <h4>Strain(&gamma;) = Voigt(&gamma;1) + Spring(&gamma;2)</h4>
-            <h4>Then the addtional equation is:</h4>
-            <h4>&gamma; = &gamma;1 +  (1/k) &sigma;1
-            <h4>Equations must be solved simultaneously</h4>`;
+         document.getElementById('game-area-center').innerHTML = `<h3>Voigt Element and Spring In Series</h3>
+         <h4>Voigt Stress(&sigma;1) = Spring = Dissipator</h4>
+         <h4>Voigt Strain(&gamma;1) = Spring + Dissipator</h4>
+         <h4>The equation for Voigt is:</h4>
+         <h4>&sigma;1 = k &gamma;1 +  &eta; d&gamma;1/dt</h4>
+         <h4>The additional spring</h4>
+         <h4>Stress(&sigma;) = Voigt(&sigma;1) = Spring(&sigma;2)</h4>
+         <h4>Strain(&gamma;) = Voigt(&gamma;1) + Spring(&gamma;2)</h4>
+         <h4>Then the addtional equation is:</h4>
+         <h4>&gamma; = &gamma;1 +  (1/k) &sigma;1
+         <h4>Equations must be solved simultaneously</h4>`;
         break;
       case 6:
-            document.getElementById('game-area-center').innerHTML = `<h3>Voigt Element and Dissipator</h3>
-            <h4>Voigt Stress(&sigma;1) = Spring + Dissipator</h4>
-            <h4>Voigt Strain(&gamma;1) = Spring = Dissipator</h4>
-            <h4>The equation for Voigt is:</h4>
-            <h4>&gamma;1 = (1/k) &sigma;1 +  (1/&eta;) d&sigma;1/dt</h4>
-            <h4>The additional dissipator</h4>
-            <h4>Stress(&sigma;) = Spring(&gamma;1) + Dissipator(&gamma;2)</h4>
-            <h4>Strain(&gamma;) = Spring(&sigma;1) = Dissipator(&sigma;2)</h4>
-            <h4>Then the addtional equation is:</h4>
-            <h4>&gamma; = (1/k) &sigma;1 +  &gamma;2</h4>
-            <h4>Equations must be solved simultaneously</h4>`;
+         document.getElementById('game-area-center').innerHTML = `<h3>Voigt Element and Dissipator</h3>
+         <h4>Voigt Stress(&sigma;1) = Spring + Dissipator</h4>
+         <h4>Voigt Strain(&gamma;1) = Spring = Dissipator</h4>
+         <h4>The equation for Voigt is:</h4>
+         <h4>&gamma;1 = (1/k) &sigma;1 +  (1/&eta;) d&sigma;1/dt</h4>
+         <h4>The additional dissipator</h4>
+         <h4>Stress(&sigma;) = Spring(&gamma;1) + Dissipator(&gamma;2)</h4>
+         <h4>Strain(&gamma;) = Spring(&sigma;1) = Dissipator(&sigma;2)</h4>
+         <h4>Then the addtional equation is:</h4>
+         <h4>&gamma; = (1/k) &sigma;1 +  &gamma;2</h4>
+         <h4>Equations must be solved simultaneously</h4>`;
         break;
       case 7:
-            document.getElementById('game-area-center').innerHTML = `<h3>Voigt Element and Dissipator</h3>
-            <h4>Voigt Stress(&sigma;1) = Spring + Dissipator</h4>
-            <h4>Voigt Strain(&gamma;1) = Spring = Dissipator</h4>
-            <h4>The equation for the Voigt elemets:</h4>
-            <h4>&gamma;1 = (1/k) &sigma;1 +  (1/&eta;) d&sigma;1/dt</h4>
-            <h4>&gamma;2 = (1/k) &sigma;2 +  (1/&eta;) d&sigma;2/dt</h4>
-            <h4>The additional dissipator</h4>
-            <h4>Then the addtional equation is:</h4>
-            <h4>&gamma; = &gamma;1 +  &gamma;2</h4>
-            <h4>Equations must be solved simultaneously</h4>`;
+         document.getElementById('game-area-center').innerHTML = `<h3>Voigt Element and Dissipator</h3>
+         <h4>Voigt Stress(&sigma;1) = Spring + Dissipator</h4>
+         <h4>Voigt Strain(&gamma;1) = Spring = Dissipator</h4>
+         <h4>The equation for the Voigt elemets:</h4>
+         <h4>&gamma;1 = (1/k) &sigma;1 +  (1/&eta;) d&sigma;1/dt</h4>
+         <h4>&gamma;2 = (1/k) &sigma;2 +  (1/&eta;) d&sigma;2/dt</h4>
+         <h4>The additional dissipator</h4>
+         <h4>Then the addtional equation is:</h4>
+         <h4>&gamma; = &gamma;1 +  &gamma;2</h4>
+         <h4>Equations must be solved simultaneously</h4>`;
         break;
       default:
-            document.getElementById('game-area-center').innerHTML = `<h3>Please add another element</h3>`;
     }
 }
