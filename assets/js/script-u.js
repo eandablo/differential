@@ -53,14 +53,14 @@ function addSpring() {
             nDissipator = document.getElementsByClassName('dissipator-div').length;
         }
         let tElements = nSprings + nDissipator - 1;
-        if (nSprings <= 3 && tElements < 4) {
+        if (nSprings <= 2 && tElements < 4) {
             let newSpring = document.createElement("div");
             newSpring.setAttribute('class', 'spring-div');
             newSpring.setAttribute('id', 'spring-' + nSprings);
             newSpring.addEventListener('mousedown', prepareDiv);
             document.getElementById('game-area-left').appendChild(newSpring);
         } else if (tElements < 4) {
-            alert(`There are already 3 spring elements, you need at least 1 disspator`);
+            alert(`There are already 2 spring elements, you need at least 1 disspator`);
         } else {
             alert(`You have exceeded the maximum number of elements`);
         }
@@ -86,14 +86,14 @@ function addDissipator() {
             nSprings = document.getElementsByClassName('spring-div').length;
         }
         let tElements = nSprings + nDissipator - 1;
-        if (nDissipator <= 3 && tElements < 4) {
+        if (nDissipator <= 2 && tElements < 4) {
             let newDissipator = document.createElement("div");
             newDissipator.setAttribute('class', 'dissipator-div');
             newDissipator.setAttribute('id', 'dissipator-' + nDissipator);
             newDissipator.addEventListener('mousedown', prepareDiv);
             document.getElementById('game-area-left').appendChild(newDissipator);
         } else if (tElements < 4) {
-            alert('There are already 3 dissipator elements, you need at least 1 spring');
+            alert('There are already 2 dissipator elements, you need at least 1 spring');
         } else {
             alert('You have exceeded the maximum number of elements');
         }
@@ -169,20 +169,41 @@ function distanceElement(deltaX,deltaY,movingDiv){
  * Takes 3 arguments (closestCoor, movingDiv,minDist)
  */
 function anchorElement(closestCoor, movingDiv,minDist){
+    const neighbourCells=[[1,2,3],[0,3,2],[3,0,1],[2,1,0]];
     let tableCells = document.getElementsByTagName('td');
-    /*Anchoring the element by removing event listener for mousedown locking the element
-     and sets top and left of element to the anchoring positions
-     Updates the table with element by calling tableUpdate*/
-    if (minDist < 15 && tableCells[closestCoor[2]].innerText === '') {
+/*Anchoring the element by removing event listener for mousedown locking the element
+and sets top and left of element to the anchoring positions
+Updates the table with element by calling tableUpdate*/
+    if (minDist < 10 && tableCells[closestCoor[2]].innerText === '') {
+ //       alert('got here');
+        let elementType=movingDiv.getAttribute('class');
+        if (elementType==='spring-div'){
+            let count=0;
+            for (let cell of neighbourCells[closestCoor[2]]){
+                if (tableCells[cell].children[0].innerText === 'DISSIPATOR'){
+                    count++;
+                }
+            }
+            document.getElementById('dummy-p').innerText = count;
+        } else{
+            let count=0;
+            for (let cell of neighbourCells[closestCoor[2]]) {
+                if (tableCells[cell].children[0].innerText === 'SPRING') {
+                    count++;
+                }
+            }
+            document.getElementById('dummy-p').innerText = count;
+        }
+
         freeElement();
         movingDiv.removeEventListener('mousedown', prepareDiv);
         //anchoring element to the closest clamping point
         movingDiv.style.left = closestCoor[0] + "px";
         movingDiv.style.top = closestCoor[1] + "px";
         let elementClass = movingDiv.getAttribute('class');
-        //Updating table
+        //Updating table on game area right about
         tableUpdate(elementClass, closestCoor[2]);
-        //temporary statement
+        //Updating game area center about
         createDiffEquation();
     }
 }
@@ -289,6 +310,6 @@ function createDiffEquation(){
       cellValue += 2*10 ** i;
     }
   }
-  document.getElementById('dummy-p').innerText = elementSelector[cellValue];
+//  document.getElementById('dummy-p').innerText = elementSelector[cellValue];
 }
 
