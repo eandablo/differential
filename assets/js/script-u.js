@@ -133,7 +133,7 @@ function moveDiv(event) {
     let divId = document.getElementById('holder3').textContent;
     let deltaX = event.clientX - xmOld+xdOld;
     let deltaY = event.clientY - ymOld+ydOld;
-    let movingDiv = document.getElementById(divId);
+    let movingDiv =document.getElementById(divId);
     movingDiv.style.left = deltaX + "px";
     movingDiv.style.top = deltaY + "px";
     distanceElement(deltaX,deltaY,movingDiv);
@@ -150,7 +150,7 @@ function freeElement() {
  * locks the element if minimum distance is achived
  */
 function distanceElement(deltaX,deltaY,movingDiv){
-  let fixPoints=[[95,100,0],[95,200,2],[167,100,1],[167,200,3]]; //anchoring positions
+  const fixPoints=[[95,100,0],[95,200,2],[167,100,1],[167,200,3]]; //anchoring positions
   let closestCoor;
   let distance=0;
   let minDist=1000;
@@ -162,22 +162,31 @@ function distanceElement(deltaX,deltaY,movingDiv){
       closestCoor=point;
     }
   }
-  let tableCells=document.getElementsByTagName('td');
- /*Anchoring the element by removing event listener for mousedown locking the element
-  and sets top and left of element to the anchoring positions
-  Updates the table with element by calling tableUpdate*/
-  if (minDist<15 && tableCells[closestCoor[2]].innerText===''){
-    freeElement();
-    movingDiv.removeEventListener('mousedown', prepareDiv);
-    //anchoring element to the closest clamping point
-    movingDiv.style.left = closestCoor[0] + "px";
-    movingDiv.style.top = closestCoor[1] + "px"
-    let elementClass=movingDiv.getAttribute('class');
-    tableUpdate(elementClass,closestCoor[2]);
-    //temporary statement
-      createDiffEquation();
-  }
+  anchorElement(closestCoor, movingDiv,minDist);
 }
+/**
+ * Anchors the element if ditance and other conditions are met
+ * Takes 3 arguments (closestCoor, movingDiv,minDist)
+ */
+function anchorElement(closestCoor, movingDiv,minDist){
+    let tableCells = document.getElementsByTagName('td');
+    /*Anchoring the element by removing event listener for mousedown locking the element
+     and sets top and left of element to the anchoring positions
+     Updates the table with element by calling tableUpdate*/
+    if (minDist < 15 && tableCells[closestCoor[2]].innerText === '') {
+        freeElement();
+        movingDiv.removeEventListener('mousedown', prepareDiv);
+        //anchoring element to the closest clamping point
+        movingDiv.style.left = closestCoor[0] + "px";
+        movingDiv.style.top = closestCoor[1] + "px";
+        let elementClass = movingDiv.getAttribute('class');
+        //Updating table
+        tableUpdate(elementClass, closestCoor[2]);
+        //temporary statement
+        createDiffEquation();
+    }
+}
+
 /**
  * Uptades the game area table when an element is anchored
  */
@@ -265,7 +274,11 @@ function createDiffEquation(){
     222: 10, //three dissipators
     2022: 10,
     2220: 10,
-    2202: 10
+    2202: 10,
+    112:11, //maxwell with one voight element
+    121:11,
+    1201:11,
+
   };
   let tableCells=document.getElementsByTagName('td')
   let cellValue=0;
