@@ -171,43 +171,47 @@ function distanceElement(deltaX,deltaY,movingDiv){
 function anchorElement(closestCoor, movingDiv,minDist){
     const neighbourCells=[[1,2,3],[0,3,2],[3,0,1],[2,1,0]];
     let tableCells = document.getElementsByTagName('td');
-    let count=0;
+    let nEmptyCell=0;
+    let nNeighbours=0;
 /*Anchoring the element by removing event listener for mousedown locking the element
 and sets top and left of element to the anchoring positions
 Updates the table with element by calling tableUpdate*/
     if (minDist < 10 && tableCells[closestCoor[2]].innerText === '') {
         for (let cell of tableCells){
             if (cell.children[0].innerText===''){
-                count++;
+                nEmptyCell++;
             }
         }
-        document.getElementById('dummy-p').innerText = count;
  //identify type of neighbour element if any
         let elementType=movingDiv.getAttribute('class');
         if (elementType==='spring-div'){
             for (let cell of neighbourCells[closestCoor[2]]){
                 if (tableCells[cell].children[0].innerText === 'DISSIPATOR'){
-                    count++;
+                    nNeighbours++;
                 }
+            }
+            if (tableCells[neighbourCells[closestCoor[2]][0]].children[0].innerText === 'SPRING'){
+                nNeighbours--;
             }
         } else{
             for (let cell of neighbourCells[closestCoor[2]]) {
                 if (tableCells[cell].children[0].innerText === 'SPRING') {
-                    count++;
+                    nNeighbours++;
                 }
             }
+            if (tableCells[neighbourCells[closestCoor[2]][0]].children[0].innerText === 'DISSIPATOR') {
+                nNeighbours--;
+            }
         }
-
-        freeElement();
-        movingDiv.removeEventListener('mousedown', prepareDiv);
-        //anchoring element to the closest clamping point
-        movingDiv.style.left = closestCoor[0] + "px";
-        movingDiv.style.top = closestCoor[1] + "px";
-        let elementClass = movingDiv.getAttribute('class');
-        //Updating table on game area right about
-        tableUpdate(elementClass, closestCoor[2]);
-        //Updating game area center about
-        createDiffEquation();
+        if (nNeighbours>0 || nEmptyCell===4){
+          freeElement(); //stop element from moving after reaching the closest anchoring point
+          movingDiv.removeEventListener('mousedown', prepareDiv);
+          movingDiv.style.left = closestCoor[0] + "px"; //anchoring element to the closest clamping point
+          movingDiv.style.top = closestCoor[1] + "px";
+          let elementClass = movingDiv.getAttribute('class');
+          tableUpdate(elementClass, closestCoor[2]); //Updating table on game area right about
+          createDiffEquation(); //Updating game area center about
+        }
     }
 }
 
