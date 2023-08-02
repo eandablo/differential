@@ -171,28 +171,31 @@ function distanceElement(deltaX,deltaY,movingDiv){
 function anchorElement(closestCoor, movingDiv,minDist){
     const neighbourCells=[[1,2,3],[0,3,2],[3,0,1],[2,1,0]];
     let tableCells = document.getElementsByTagName('td');
+    let count=0;
 /*Anchoring the element by removing event listener for mousedown locking the element
 and sets top and left of element to the anchoring positions
 Updates the table with element by calling tableUpdate*/
     if (minDist < 10 && tableCells[closestCoor[2]].innerText === '') {
- //       alert('got here');
+        for (let cell of tableCells){
+            if (cell.children[0].innerText===''){
+                count++;
+            }
+        }
+        document.getElementById('dummy-p').innerText = count;
+ //identify type of neighbour element if any
         let elementType=movingDiv.getAttribute('class');
         if (elementType==='spring-div'){
-            let count=0;
             for (let cell of neighbourCells[closestCoor[2]]){
                 if (tableCells[cell].children[0].innerText === 'DISSIPATOR'){
                     count++;
                 }
             }
-            document.getElementById('dummy-p').innerText = count;
         } else{
-            let count=0;
             for (let cell of neighbourCells[closestCoor[2]]) {
                 if (tableCells[cell].children[0].innerText === 'SPRING') {
                     count++;
                 }
             }
-            document.getElementById('dummy-p').innerText = count;
         }
 
         freeElement();
