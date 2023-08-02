@@ -206,28 +206,29 @@ function clampingCriteria(closestCoor,tableCells,movingDiv){
     let elementType = movingDiv.getAttribute('class');
     if (elementType === 'spring-div') {
         for (let cell of neighbourCells[closestCoor[2]]) {
-            if (tableCells[cell].children[0].innerText === 'DISSIPATOR') {
+            if (tableCells[cell].children[0].innerText.toLowerCase() === 'dissipator') {
                 nNeighbours++;
             }
         }
-        if (tableCells[neighbourCells[closestCoor[2]][0]].children[0].innerText === 'SPRING') {
+        if (tableCells[neighbourCells[closestCoor[2]][0]].children[0].innerText.toLowerCase() === 'spring') {
             nNeighbours--;
         }
     } else {
         for (let cell of neighbourCells[closestCoor[2]]) {
-            if (tableCells[cell].children[0].innerText === 'SPRING') {
+            if (tableCells[cell].children[0].innerText.toLowerCase() === 'spring') {
                 nNeighbours++;
             }
         }
-        if (tableCells[neighbourCells[closestCoor[2]][0]].children[0].innerText === 'DISSIPATOR') {
+        if (tableCells[neighbourCells[closestCoor[2]][0]].children[0].innerText.toLowerCase() === 'dissipator') {
             nNeighbours--;
         }
     }
     return [nEmptyCell, nNeighbours];
 }
-
 /**
  * Uptades the game area table when an element is anchored
+ * @param {*} elementClass 
+ * @param {*} closestCoor 
  */
 function tableUpdate(elementClass, closestCoor){
   let tableCells=document.getElementsByTagName('td');
@@ -266,11 +267,12 @@ function resetGame(){
     cell.children[0].innerHTML="";
     cell.children[1].innerHTML = "";
   } 
+  document.getElementById('game-area-center').innerHTML = '';
 }
 
 /**
- * Creates text for the central about of game area updating the differential equation
-that represents the current program
+* Creates text for the central about of game area updating the differential equation
+that represents the current progra
 */
 function createDiffEquation(){
   let elementSelector={
@@ -282,52 +284,89 @@ function createDiffEquation(){
     20:2,
     200:2,
     2000:2,
-    11:3, //parallel springs
-    1100:3,
-    101:4, //springs in series
-    1001:4,
-    110:4,
-    1010:4,
-    202: 5, //dissipators in series
-    2002: 5,
-    220: 5,
-    2020: 5,
-    0022:6, //parallel dissipators
-    2200:6,
-    12:7, //voigt model
-    21:7,
-    1200:7,
-    2100:7,
-    201:8, //maxwell model
-    102:8,
-    1020:8,
-    2010:8,
-    1002:8,
-    2001:8,
-    210:8,
-    120:8,
-    111:9, //three springs
-    1011:9,
-    1110:9,
-    1101:9,
-    222: 10, //three dissipators
-    2022: 10,
-    2220: 10,
-    2202: 10,
-    112:11, //maxwell with one voight element
-    121:11,
-    1201:11,
-
+    12:3, //voigt model
+    21:3,
+    1200:3,
+    2100:3,
+    201:4, //maxwell model
+    102:4,
+    120:4,
+    210:4,
+    1020:4,
+    2010:4,
+    1002:4,
+    2001:4,
+    112:5, //voigt element in series to spring
+    121:5,
+    1021:5,
+    1012:5,
+    1201:5,
+    1210:5,
+    2101:5,
+    2110:5,
+    212: 6, //voigt element in series to dissipator
+    221: 6,
+    2021: 6,
+    2012: 6,
+    1202: 6,
+    1220: 6,
+    2102: 6,
+    2120: 6,
+    2121: 7, //Voigt Elements in series
+    2112:7,
+    1212:7,
+    1221:7
   };
   let tableCells=document.getElementsByTagName('td')
   let cellValue=0;
   for (let i=0;i<4;i++){
-    if (tableCells[i].children[0].innerText==="SPRING"){
+    if (tableCells[i].children[0].innerText.toLowerCase()==="spring"){
       cellValue+=10**i;
-    } else if (tableCells[i].children[0].innerText === "DISSIPATOR"){
+    } else if (tableCells[i].children[0].innerText.toLowerCase() === "dissipator"){
       cellValue += 2*10 ** i;
     }
   }
+  writeEquation(elementSelector[cellValue]);
 //  document.getElementById('dummy-p').innerText = elementSelector[cellValue];
 }
-
+/**
+ * Writes resulting mechanical name and equations in central about of game area
+ */
+function writeEquation(selection){
+    switch (selection){
+      case 3:
+            document.getElementById('game-area-center').innerHTML =`<h3>Voigt Element</h3>
+            <h4>Stress(&sigma;) = Spring + Dissipator</h4>
+            <h4>Strain(&gamma;) = Spring = Dissipator</h4>
+            <h4>The Equation is then:</h4>
+            <h4>&sigma; = (1/k) &gamma; +  (1/&eta;) d&gamma;/dt</h4>`;
+        break;
+      case 4:
+            document.getElementById('game-area-center').innerHTML = `<h3>Maxwell Element</h3>
+            <h4>Stress(&sigma;) = Spring = Dissipator</h4>
+            <h4>Strain(&gamma;) = Spring + Dissipator</h4>
+            <h4>The Equation is then:</h4>
+            <h4>&gamma; = k &sigma; +  &eta; d&sigma;/dt</h4>`;
+        break;
+      case 5:
+            document.getElementById('game-area-center').innerHTML = `<h3>Voigt Element and Spring In Series</h3>
+            <h4>Voigt Stress(&sigma;1) = Spring = Dissipator</h4>
+            <h4>Voigt Strain(&gamma;1) = Spring + Dissipator</h4>
+            <h4>The equation for Voigt is:</h4>
+            <h4>&sigma;1 = (1/k) &gamma;1 +  (1/&eta;) d&gamma;1/dt</h4>
+            <h4>The additional spring</h4>
+            <h4>Stress(&sigma;) = Spring(&sigma;1) = Dissipator(&sigma;2)</h4>
+            <h4>Strain(&gamma;) = Spring(&gamma;1) + Dissipator(&gamma;2)</h4>`;
+        break;
+      case 6:
+            document.getElementById('game-area-center').innerHTML = `<h3>Voigt Element and Dissipator</h3>
+            <h4>&gamma; = k &sigma; +  &eta; d&sigma;/dt</h4>`;
+        break;
+      case 7:
+            document.getElementById('game-area-center').innerHTML = `<h3>Two Voigt Elements in Series</h3>
+            <h4>&gamma; = k &sigma; +  &eta; d&sigma;/dt</h4>`;
+        break;
+      default:
+            document.getElementById('game-area-center').innerHTML = `<h3>Please add another element</h3>`;
+    }
+}
