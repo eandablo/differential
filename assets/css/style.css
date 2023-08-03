@@ -253,6 +253,10 @@ a {
 .instruction-child-blue > p {
     text-align: justify;
 }
+.mobile-instruction{
+    display:none;
+}
+
 #game-area {
     text-align: center;
     width: 100%;
@@ -410,6 +414,12 @@ th {
     }
     #instructions>div {
         height: 750px;
+    }
+    .mobile-instruction {
+        display: inline;
+    }
+    .desktop-instruction {
+        display: none;
     }
 }
 @media screen and (max-width:715px){
