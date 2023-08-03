@@ -170,6 +170,7 @@ a {
     top: 10px;
     right: 10px;
     background: url('../images/burger_open.png') center center / cover no-repeat;
+    z-index: 3;
 }
 
 #user-info-div {
@@ -177,7 +178,7 @@ a {
     height: 200px;
     position: absolute;
     display: none;
-    top: 40px;
+    top: 0;
     right: 0;
     background-color: #fff;
     color: #1b1b1b;
