@@ -222,7 +222,7 @@ a {
     border: #1b1b1b inset 3px;
     border-radius: 10px;
     text-align: center;
-    padding-left: 25px;
+    padding-left: 30px;
     padding-right: 25px;
 }
 
@@ -248,6 +248,9 @@ a {
 }
 .instruction-child-blue>h3 {
     margin: 15px auto 15px auto;
+}
+.instruction-child-blue > p {
+    text-align: justify;
 }
 #game-area {
     text-align: center;

@@ -387,5 +387,6 @@ function writeEquation(selection){
          <h4>Equations must be solved simultaneously</h4>`;
         break;
       default:
+        document.getElementById('game-area-center').innerHTML = `<h3>Please add another element</h3>`;
     }
 }
