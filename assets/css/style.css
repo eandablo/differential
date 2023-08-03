@@ -293,6 +293,33 @@ a {
     border-radius: 5px;
 }
 
+.round-button{
+    height:20px;
+    width:20px;
+    border-radius: 50%;
+    background-color: #5e5959;
+}
+
+#socket-1{
+    position: absolute;
+    top:115px;
+    left:100px;
+}
+#socket-2 {
+    position: absolute;
+    top: 115px;
+    left: 177px;
+}
+#socket-3 {
+    position: absolute;
+    top: 215px;
+    left: 100px;
+}
+#socket-4 {
+    position: absolute;
+    top: 215px;
+    left: 177px;
+}
 #game-area-center {
     height: 370px;
     flex: 0 1 400px;

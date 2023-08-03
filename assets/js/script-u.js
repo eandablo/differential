@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     resetButton.addEventListener('click',resetGame);
 });
 /**
- * shows or hides the information when the burger button is pressed
+ * Shows or hides the information when the burger button is pressed
  */
 function infoDisplayButton() {
     let infoDisplay = document.getElementById('user-info-div');
@@ -45,7 +45,9 @@ function infoDisplayButton() {
  * Adds a new sring element
  */
 function addSpring() {
+    let divId='';
     if (document.getElementsByClassName('spring-div')[0]) {
+        let reject = addRejection('s');
         let nSprings = document.getElementsByClassName('spring-div').length + 1;
         //stops producing elements if there are already 3 springs or total elements are 4
         let nDissipator = 0;
@@ -53,32 +55,40 @@ function addSpring() {
             nDissipator = document.getElementsByClassName('dissipator-div').length;
         }
         let tElements = nSprings + nDissipator - 1;
+        if (reject===0){
         if (nSprings <= 2 && tElements < 4) {
+            divId = 'spring-' + nSprings;
             let newSpring = document.createElement("div");
             newSpring.setAttribute('class', 'spring-div');
-            newSpring.setAttribute('id', 'spring-' + nSprings);
+            newSpring.setAttribute('id', divId);
             newSpring.addEventListener('mousedown', prepareDiv);
             document.getElementById('game-area-left').appendChild(newSpring);
+            document.getElementById('holder3').innerText = divId;
+            activateSockets();
         } else if (tElements < 4) {
             alert(`There are already 2 spring elements, you need at least 1 disspator`);
         } else {
             alert(`You have exceeded the maximum number of elements`);
         }
+        }
     } else {
+        divId = 'spring-1';
         let newSpring = document.createElement("div");
         newSpring.setAttribute('class', 'spring-div');
-        newSpring.setAttribute('id', 'spring-1');
+        newSpring.setAttribute('id', divId);
         newSpring.addEventListener('mousedown', prepareDiv);
         document.getElementById('game-area-left').appendChild(newSpring);
+        document.getElementById('holder3').innerText = divId;
+        activateSockets();
     }
-
 }
 /**
  * Adds a new dissipator element
  */
 function addDissipator() {
-    let nDissipator = 1;
+    let divId='';
     if (document.getElementsByClassName('dissipator-div')[0]) {
+        let reject = addRejection('d');
         let nDissipator = document.getElementsByClassName('dissipator-div').length + 1;
         //stops producing elements if there are already 3 springs or total elements are 4
         let nSprings = 0;
@@ -86,38 +96,110 @@ function addDissipator() {
             nSprings = document.getElementsByClassName('spring-div').length;
         }
         let tElements = nSprings + nDissipator - 1;
+        if(reject===0){
         if (nDissipator <= 2 && tElements < 4) {
+            divId = 'dissipator-' + nDissipator;
             let newDissipator = document.createElement("div");
             newDissipator.setAttribute('class', 'dissipator-div');
-            newDissipator.setAttribute('id', 'dissipator-' + nDissipator);
+            newDissipator.setAttribute('id', divId);
             newDissipator.addEventListener('mousedown', prepareDiv);
             document.getElementById('game-area-left').appendChild(newDissipator);
+            document.getElementById('holder3').innerText = divId;
+            activateSockets();
         } else if (tElements < 4) {
             alert('There are already 2 dissipator elements, you need at least 1 spring');
         } else {
             alert('You have exceeded the maximum number of elements');
         }
+        }
     } else {
+        divId = 'dissipator-1';
         let newDissipator = document.createElement("div");
         newDissipator.setAttribute('class', 'dissipator-div');
-        newDissipator.setAttribute('id', 'dissipator-' + nDissipator);
+        newDissipator.setAttribute('id', divId);
         newDissipator.addEventListener('mousedown', prepareDiv);
         document.getElementById('game-area-left').appendChild(newDissipator);
+        document.getElementById('holder3').innerText = divId;
+        activateSockets();
     }
 }
+/**
+ * 
+ * @param {} newElement 
+ */
+function addRejection(newElement){
+    let tableCells=document.getElementsByTagName('td');
+    let nSprings=document.getElementsByClassName('spring-div').length; //new number of springs
+    let nDissipators = document.getElementsByClassName('dissipator-div').length; //new number of dissipator
+    let dockSprings=0;
+    let dockDissipators=0;
+    let nBusy=0;
+    let flag=0;
+    for (let cell of tableCells){
+        if (cell.children[0].innerText!==''){
+            nBusy++; //Calculate number of docked elements
+        }
+        if (cell.children[0].innerText=== 'SPRING'){
+            dockSprings++; // Calculate number of docked springs
+        }
+        if(cell.children[0].innerText=== 'DISSIPATOR') {
+            dockDissipators++; //Calculate number of docked dissipators
+        }
+    }
+    if (nBusy<nSprings+nDissipators){
+        flag++;
+        alert('First try attaching the new element');
+    }
+    if (dockSprings===1 && newElement==='s' && dockDissipators===0){
+        flag++;
+        alert('First try adding a new dissipator');
+    }
+    if (dockDissipators===1 && newElement==='d' && dockSprings===0){
+        flag++;
+        alert('First try adding a new spring');
+    }
+    return flag;
+//    document.getElementById('dummy-p').innerText = `${newElement},${dockSprings},${dockDissipators},${nSprings},${nDissipators}`;
+}
+
 /**
  * starts function moveDiv to prepare moving the div on mouse down
  * on mouse up call the function to free the element from dragging
  */
-function prepareDiv(event) {;
-    let divId = this.getAttribute('id');
+function prepareDiv(event) {
     document.getElementById('holder1').innerText = event.clientX;
     document.getElementById('holder2').innerText = event.clientY;
-    document.getElementById('holder3').innerText = this.getAttribute('id');
     document.getElementById('holder4').innerText = this.offsetLeft;
     document.getElementById('holder5').innerText = this.offsetTop;
     document.addEventListener('mouseup', freeElement);
     document.addEventListener('mousemove', moveDiv);
+}
+/**
+ * Activates socket buttons
+ * @param {} divId 
+ */
+function activateSockets() {
+  let socketButtons = document.getElementsByClassName('round-button');
+  for (let socket of socketButtons){
+      socket.addEventListener('click', socketInit);
+  }
+}
+/**
+ * socket buttons funcitonality: anchors the element to the corresponding socket
+ */
+function socketInit() {
+    const fixPoints = {
+        'socket-1':[95, 100, 0], 
+        'socket-2':[167, 100, 1], 
+        'socket-3':[95, 200, 2], 
+        'socket-4':[167, 200, 3]
+    }; //anchoring positions
+    let buttonId = this.getAttribute('id');
+    let minDist = 5;
+    let closestCoor = fixPoints[buttonId];
+    let divId = document.getElementById('holder3').innerText;
+    let movingDiv = document.getElementById(divId);
+    anchorElement(closestCoor, movingDiv, minDist);
 }
 /**
 Updates position of the selected div with the mouse coordinates
@@ -176,6 +258,10 @@ Updates the table with element by calling tableUpdate*/
     if (minDist < 10 && tableCells[closestCoor[2]].innerText === '') {
         let neighbourInfo = clampingCriteria(closestCoor, tableCells, movingDiv);
         if (neighbourInfo[1] >0 || neighbourInfo[0]===4){
+            let socketButtons = document.getElementsByClassName('round-button');
+            for (let socket of socketButtons) {
+                socket.removeEventListener('click', socketInit);
+            }
           freeElement(); //stop element from moving after reaching the closest anchoring point
           movingDiv.removeEventListener('mousedown', prepareDiv);
           movingDiv.style.left = closestCoor[0] + "px"; //anchoring element to the closest clamping point
