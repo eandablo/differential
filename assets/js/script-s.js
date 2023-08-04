@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function(){
         let userDegree = document.getElementById('education').value;
         let userEmail = document.getElementById('user-email').value;
         let userExist = usersInfo.includes(userEmail);
+ //       let suscribeForm=document.getElementById('suscribe-form');
         if (userExist) {
             alert('Email already in use');
             document.getElementById('fname').value = "";
@@ -16,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function(){
             localStorage.setItem('useremail', userEmail);
             localStorage.setItem('username', userName);
             localStorage.setItem('userdegree', userDegree);
-            window.location.href = "userpage.html";
+            window.location.href="userpage.html";
         }
     });
 });

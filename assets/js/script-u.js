@@ -461,7 +461,7 @@ function writeEquation(selection){
          <h4>Equations must be solved simultaneously</h4>`;
         break;
       case 7:
-         document.getElementById('game-area-center').innerHTML = `<h3>Voigt Element and Dissipator</h3>
+         document.getElementById('game-area-center').innerHTML = `<h3>Voigt Elements in Series</h3>
          <h4>Voigt Stress(&sigma;1) = Spring + Dissipator</h4>
          <h4>Voigt Strain(&gamma;1) = Spring = Dissipator</h4>
          <h4>The equation for the Voigt elemets:</h4>

@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded',function(){
 // gets login button and allows allows login if conditions in loginFunction are met
     document.getElementById('login-button').addEventListener('click', function(event) {
         event.preventDefault();
+        let loginForm=document.getElementById('login-form');
         let loginField = document.getElementById('login-field');
         let userEmail = loginField.children[3].value;
         let userPass = loginField.children[7].value;
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded',function(){
             }
         }
         if (validUser) {
-            window.location.href = "userpage.html"; //opens userpage without submiting form
+            loginForm.submit(); //opens userpage without submiting form
         } else { //if user email does not exist sends alert and clears login fields
             loginField.children[3].value = "";
             loginField.children[7].value = "";
