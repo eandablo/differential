@@ -1,25 +1,31 @@
 document.addEventListener('DOMContentLoaded', function(){
 // starts event listener for suscribe button and opens userpage 
-    document.getElementById('suscribe-button').addEventListener('click', function(event) {
-        event.preventDefault();
-        let usersInfo = ['e@gmail.com', 'l@gmail.com'];
-        let userName = document.getElementById('fname').value;
-        let userDegree = document.getElementById('education').value;
-        let userEmail = document.getElementById('user-email').value;
-        let userPass=document.getElementById('user-pass').value;
-        let userExist = usersInfo.includes(userEmail); //checks if email entered is already included
- // let suscribeForm=document.getElementById('suscribe-form');
-        if (userExist) { //if email already exist cleans all form inputs and sends alert
-            alert('Email already in use');
-            document.getElementById('fname').value = "";
-            document.getElementById('education').value = "";
-            document.getElementById('user-email').value = "";
-            document.getElementById('user-pass').value = "";
-        } else {
-            localStorage.setItem('useremail', userEmail);
-            localStorage.setItem('username', userName);
-            localStorage.setItem('userdegree', userDegree);
-            window.location.href = "userpage.html"; //opens userpage without submiting form
-        }
-    });
+  document.getElementById('suscribe-button').addEventListener('click', function(event) {
+    event.preventDefault();
+    let inputObjects={};
+    let emptyInput=0;
+    let usersInfo = ['e@gmail.com', 'l@gmail.com'];
+    inputObjects.userName = document.getElementById('fname');
+    inputObjects.userDegree = document.getElementById('education');
+    inputObjects.userEmail = document.getElementById('user-email');
+    inputObjects.userPass=document.getElementById('user-pass');
+    for (let item in inputObjects){ //Return the number of empty inputs if any
+      if (inputObjects[item].value===""){
+        emptyInput++;
+      }
+    }
+    if (emptyInput>0){
+      alert('Please complete all fields before submiting'); //Rejects submission if any field is empty
+    } else if (usersInfo.includes(inputObjects.userEmail.value)) { //if email already exist cleans all form inputs and sends alert
+      alert('Email already in use');
+      for (let item in inputObjects){
+        inputObjects[item].value="";
+      }
+    } else {
+      localStorage.setItem('useremail', inputObjects.userEmail.value);
+      localStorage.setItem('username', inputObjects.userName.value);
+      localStorage.setItem('userdegree', inputObjects.userDegree.value);
+      window.location.href = "userpage.html"; //opens userpage without submiting form
+    }
+  });
 });
