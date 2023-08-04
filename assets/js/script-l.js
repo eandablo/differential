@@ -1,6 +1,5 @@
-//After loading page,  this waits for a 
 document.addEventListener('DOMContentLoaded',function(){
-// gets login button and allows allows login if conditions in loginFunction are met
+// gets login button and allows login if conditions in loginFunction are met
     document.getElementById('login-button').addEventListener('click', function(event) {
         event.preventDefault();
         let loginForm=document.getElementById('login-form');
