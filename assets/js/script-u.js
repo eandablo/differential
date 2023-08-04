@@ -3,13 +3,13 @@
  * using the information to create the personalised user space
  */
 function loginInfo() {
-    let userName = localStorage.getItem('username');
+    let userName = localStorage.getItem('username'); //getting info from local storage
     let userEmail = localStorage.getItem('useremail');
     let userDegree = localStorage.getItem('userdegree');
-    document.getElementById('user-name').innerText = userName;
+    document.getElementById('user-name').innerText = userName; //write info to user-info-div
     document.getElementById('user-email').innerText = userEmail;
     document.getElementById('user-education').innerText = userDegree;
-    if (userName.includes(' ')) {
+    if (userName.includes(' ')) { //if user has a last name it obtains only the first name
         let indexFirstSpace = userName.indexOf(' ');
         let firstName = userName.slice(0, indexFirstSpace);
         document.getElementById('user-first-name').innerText = firstName.toUpperCase();
@@ -45,34 +45,19 @@ function infoDisplayButton() {
  * Adds a new sring element
  */
 function addSpring() {
-    let divId='';
-    if (document.getElementsByClassName('spring-div')[0]) {
-        let reject = addRejection('s');
-        let nSprings = document.getElementsByClassName('spring-div').length + 1;
-        //stops producing elements if there are already 3 springs or total elements are 4
-        let nDissipator = 0;
-        if (document.getElementsByClassName('dissipator-div')[0]) {
-            nDissipator = document.getElementsByClassName('dissipator-div').length;
-        }
-        let tElements = nSprings + nDissipator - 1;
-        if (reject===0){
-        if (nSprings <= 2 && tElements < 4) {
-            divId = 'spring-' + nSprings;
-            let newSpring = document.createElement("div");
-            newSpring.setAttribute('class', 'spring-div');
-            newSpring.setAttribute('id', divId);
-            newSpring.addEventListener('mousedown', prepareDiv);
-            document.getElementById('game-area-left').appendChild(newSpring);
-            document.getElementById('holder3').innerText = divId;
-            activateSockets();
-        } else if (tElements < 4) {
-            alert(`There are already 2 spring elements, you need at least 1 disspator`);
-        } else {
-            alert(`You have exceeded the maximum number of elements`);
-        }
-        }
-    } else {
-        divId = 'spring-1';
+  let divId='';
+  if (document.getElementsByClassName('spring-div')[0]) {
+    let reject = addRejection('s');
+    let nSprings = document.getElementsByClassName('spring-div').length + 1;
+    //stops producing elements if there are already 3 springs or total elements are 4
+    let nDissipator = 0;
+    if (document.getElementsByClassName('dissipator-div')[0]) {
+      nDissipator = document.getElementsByClassName('dissipator-div').length;
+    }
+    let tElements = nSprings + nDissipator - 1;
+    if (reject===0){
+      if (nSprings <= 2 && tElements < 4) {
+        divId = 'spring-' + nSprings;
         let newSpring = document.createElement("div");
         newSpring.setAttribute('class', 'spring-div');
         newSpring.setAttribute('id', divId);
@@ -80,7 +65,22 @@ function addSpring() {
         document.getElementById('game-area-left').appendChild(newSpring);
         document.getElementById('holder3').innerText = divId;
         activateSockets();
+      } else if (tElements < 4) {
+        alert(`There are already 2 spring elements, you need at least 1 disspator`);
+      } else {
+        alert(`You have exceeded the maximum number of elements`);
+      }
     }
+  } else {
+    divId = 'spring-1';
+    let newSpring = document.createElement("div");
+    newSpring.setAttribute('class', 'spring-div');
+    newSpring.setAttribute('id', divId);
+    newSpring.addEventListener('mousedown', prepareDiv);
+    document.getElementById('game-area-left').appendChild(newSpring);
+    document.getElementById('holder3').innerText = divId;
+    activateSockets(); //starting socket buttons
+  }
 }
 /**
  * Adds a new dissipator element
@@ -124,13 +124,15 @@ function addDissipator() {
     }
 }
 /**
- * 
+ * Function receives the type of new element and checks if there are lose elements
+ * as well as if there is only one element, checks if it is the same type
+ * if none of this condition are met function returns 0 otherwise 1
  * @param {} newElement 
  */
 function addRejection(newElement){
     let tableCells=document.getElementsByTagName('td');
-    let nSprings=document.getElementsByClassName('spring-div').length; //new number of springs
-    let nDissipators = document.getElementsByClassName('dissipator-div').length; //new number of dissipator
+    let nSprings=document.getElementsByClassName('spring-div').length; //number of springs
+    let nDissipators = document.getElementsByClassName('dissipator-div').length; //number of dissipator
     let dockSprings=0;
     let dockDissipators=0;
     let nBusy=0;
@@ -159,7 +161,6 @@ function addRejection(newElement){
         alert('First try adding a new spring');
     }
     return flag;
-//    document.getElementById('dummy-p').innerText = `${newElement},${dockSprings},${dockDissipators},${nSprings},${nDissipators}`;
 }
 
 /**
