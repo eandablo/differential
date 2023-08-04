@@ -1,10 +1,21 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome,
 
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Introduction
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 11th, 2023**
+Differential is a website designed to help people with basic knowledge of differencial calculus to understand the relevance of differential equations to represent mathematically physical problems. Differential guides the user to describe a simple problem, namely mechanical relaxation, in a single or set of differential equations.
+
+### User stories based on UX experience
+
+#### First time user
+
+- A first time user I will find a login page with clearly indicated suscribe links
+- As a first time user, after filling the suscribe page fields and clicking on suscribe button, the user will be redirected to the userpage.
+- As a first time user, the user page will show me a welcome message and a small burger button to show my details and log out link. Immediately after, I found a section explaining the intention of the website, the case of study and instructions. The game area below is divided in three abouts. The left one contains the playground, where a mechanic device can be easily built. The cetral and right about are uptated live with the physics and mathematics describing the device.
+
+### Second time user
+
+- As a second time user 
 
 ## Codeanywhere Reminders
 

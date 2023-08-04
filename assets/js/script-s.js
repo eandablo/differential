@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function(){
         let userName = document.getElementById('fname').value;
         let userDegree = document.getElementById('education').value;
         let userEmail = document.getElementById('user-email').value;
+        let userPass=document.getElementById('user-pass').value;
         let userExist = usersInfo.includes(userEmail); //checks if email entered is already included
  // let suscribeForm=document.getElementById('suscribe-form');
         if (userExist) { //if email already exist cleans all form inputs and sends alert
