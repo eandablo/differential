@@ -406,7 +406,7 @@ th {
 
 
 /* Adding responsiveness for tablets and mobiles */
-@media screen and (max-width:915px) {
+@media screen and (max-width:1073px) {
     #outer-login-page {
         grid-template-columns: 100%;
         grid-template-rows: 150px 800px;
@@ -444,7 +444,7 @@ th {
         display: inline-block;
     }
 }
-
+/* Adding responsiveness for mobiles */
 @media screen and (max-width:715px) {
     #instructions {
         height: 1000px;
