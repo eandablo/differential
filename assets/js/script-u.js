@@ -46,8 +46,9 @@ function infoDisplayButton() {
  */
 function addSpring() {
   let divId='';
+  let reject = addRejection('s');
   if (document.getElementsByClassName('spring-div')[0]) { //checks if there are already springs created
-    let reject = addRejection('s');
+
     let nSprings = document.getElementsByClassName('spring-div').length + 1;
     let nDissipator = 0;
     if (document.getElementsByClassName('dissipator-div')[0]) {
@@ -71,7 +72,7 @@ function addSpring() {
         alert(`You have exceeded the maximum number of elements`);
       }
     }
-  } else { // if no springs already exist, creates the first
+  } else if(reject===0){ // if no springs already exist, creates the first
     divId = 'spring-1';
     let newSpring = document.createElement("div");
     newSpring.setAttribute('class', 'spring-div');
@@ -87,8 +88,9 @@ function addSpring() {
  */
 function addDissipator() {
   let divId='';
+  let reject = addRejection('d');
   if (document.getElementsByClassName('dissipator-div')[0]) {
-    let reject = addRejection('d');
+
     let nDissipator = document.getElementsByClassName('dissipator-div').length + 1;    
     let nSprings = 0;
     if (document.getElementsByClassName('spring-div')[0]) {
@@ -112,7 +114,7 @@ function addDissipator() {
         alert('You have exceeded the maximum number of elements');
       }
     }
-  } else {
+  } else if(reject===0){
     divId = 'dissipator-1';
     let newDissipator = document.createElement("div");
     newDissipator.setAttribute('class', 'dissipator-div');
