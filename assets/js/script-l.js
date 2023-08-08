@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded',function(){
     let userEmail = loginField.children[3].value;
     let userPass = loginField.children[7].value;
     let usersInfo = [
-      { name: 'Efren Andablo', email: 'e@gmail.com', password: 'efren', degree: 'Level 5' },
-      { name: 'Leela Lou', email: 'l@gmail.com', password: 'leela', degree: 'Level 7' }
+      { name: 'Efren Andablo', email: 'e@gmail.com', password: 'efren', degree: 'High School' },
+      { name: 'Leela Lou', email: 'l@gmail.com', password: 'leela', degree: 'BSc' }
     ];
 // checking if email exists in usersInfo and password matches user email
     let validUser = false;
