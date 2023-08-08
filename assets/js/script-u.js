@@ -435,7 +435,7 @@ function writeEquation(selection){
       <h4>Force(&sigma;) = Spring = Dissipator</h4>
       <h4>Strain(&gamma;) = Spring + Dissipator</h4>
       <h4>The Equation is then:</h4>
-      <h4>d&gamma;/dt = (1/k) d&sigma;/dt +  (1/&eta;) d&sigma;/dt</h4>`;
+      <h4>d&gamma;/dt = (1/k) d&sigma;/dt +  (1/&eta;) &sigma;</h4>`;
       break;
     case 5:
       document.getElementById('game-area-center').innerHTML = `<h3>Voigt Element and Spring In Series</h3>
