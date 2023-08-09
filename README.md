@@ -1,11 +1,18 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-
 ## Introduction
 
 Differential is a website designed to help people with basic knowledge of differencial calculus to understand the relevance of differential equations to represent mathematically physical problems. Differential guides the user to describe a simple problem, namely mechanical relaxation, in a single or set of differential equations.
 
 ### User stories based on UX experience
+
+#### First time user
+
+- As first time user, I need to find a friendly page to sig-up.
+- As first time user, after signing-up I need to find a description of the website including instructions.
+- As first time user, I need to be able to easily use the site game to familiarise.
+
+#### Second time user
+
+- As a second time user,
 
 #### First time user
 
