@@ -1,18 +1,53 @@
+# Differential
+
 ## Introduction
 
 Differential is a website designed to help people with basic knowledge of differencial calculus to understand the relevance of differential equations to represent mathematically physical problems. Differential guides the user to describe a simple problem, namely mechanical relaxation, in a single or set of differential equations.
 
-### User stories based on UX experience
+## User experience UX
+
+### User stories
 
 #### First time user
 
-- As first time user, I need to find a friendly page to sig-up.
-- As first time user, after signing-up I need to find a description of the website including instructions.
-- As first time user, I need to be able to easily use the site game to familiarise.
+- As first time user, I need to find a friendly page to sign-up.
+- As first time user, after signing up, I need to find a description of the website including instructions.
 
-#### Second time user
+#### Returning user
 
-- As a second time user,
+- As returning user, I need to find a friendly and simple login page
+- As returning user, After login in, I need to be able to access the information I used to sign-up
+- As returning user, I need to find instructions to use the page in order to refresh my past experience
+
+### Design
+
+#### Fonts and color scheme
+
+- The font Bitter was obtained from Google fonts and used althrough the website, with Georgia followed by Sans-Serif as websafe backup.
+- The website is designed using a combination of four colors: i) white, used in background and font colour, ii) #1b1b1b, used in background and font colour, iii) #a75910, used in backgrounds and iv) #fa7d92, used in inputs background on focus.
+  
+### Wireframes
+
+#### Login page
+
+The login page has a simple design. At the left side a simple image to represent the subject, namely, math.
+At the right top, there are two links, one for login and another for sign-up pages. Below, a simple fieldset
+constains the inputs for login details.
+
+![login_page](assets/images/login_page.png)
+
+#### Sign-up page
+
+The sign-up page has the same structure as the login page. The only difference is that the fieldset contains four inputs.
+
+![sign-up_page](assets/images/suscribe_page.png)
+
+#### User page
+
+At the top of the user page a header contains a welcome message at the left and at the right a burger button
+to diplay user information and log out option. Immediately below there is a section with description of the page. Below, the next section contains the game divided in three divs.
+
+![user_page](assets/images/user_page.png)
 
 #### First time user
 
@@ -22,36 +57,8 @@ Differential is a website designed to help people with basic knowledge of differ
 
 ### Second time user
 
-- As a second time user 
+- As a second time user
 
-## Codeanywhere Reminders
+## Credits
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
-
-`python3 -m http.server`
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
-
-`http_server`
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+- Content was created by the author
