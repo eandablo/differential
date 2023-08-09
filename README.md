@@ -24,7 +24,7 @@ Differential is a website designed to help people with basic knowledge of differ
 #### Fonts and color scheme
 
 - The font Bitter was obtained from Google fonts and used althrough the website, with Georgia followed by Sans-Serif as websafe backup.
-- The website is designed using a combination of four colors: i) white, used in background and font colour, ii) #1b1b1b, used in background and font colour, iii) #a75910, used in backgrounds and iv) #fa7d92, used in inputs background on focus.
+- The website is designed using a combination of four colors: i)white, used in background and font colour, ii)#1b1b1b, used in background and font colour, iii)#a75910, used in backgrounds and iv)#fa7d92, used in inputs background on focus. The correspondent contrast grid can be found [here](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23FFFFFF%2C%20White%0D%0A%231b1b1b%0D%0A%23a75910%0D%0A%23fa7d92&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp).
   
 ### Wireframes
 
@@ -48,6 +48,10 @@ At the top of the user page a header contains a welcome message at the left and 
 to diplay user information and log out option. Immediately below there is a section with description of the page. Below, the next section contains the game divided in three divs.
 
 ![user_page](assets/images/user_page.png)
+
+## Website surface
+
+
 
 #### First time user
 
