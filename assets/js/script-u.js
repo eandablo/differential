@@ -457,7 +457,7 @@ function writeEquation(selection){
       <h4>The equation for Voigt is:</h4>
       <h4>&sigma;1 = k &gamma;1 +  &eta; d&gamma;1/dt</h4>
       <h4>The additional dissipator</h4>
-      <h4>Force(&sigma;) = Voigt(&gamma;1) = Dissipator(&sigma;2)</h4>
+      <h4>Force(&sigma;) = Voigt(&sigma;1) = Dissipator(&sigma;2)</h4>
       <h4>Strain(&gamma;) = Voigt(&gamma;1) = Dissipator(&gamma;2)</h4>
       <h4>Then the addtional equation is:</h4>
       <h4>d&gamma;/dt = d&gamma;1/dt + (1/&eta;) d&sigma;/dt</h4>
