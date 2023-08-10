@@ -361,10 +361,10 @@ function resetGame(){
 
 /**
 * Creates text for the central about of game area updating the differential equation
-that represents the current progra
+that represents the current arrange of dissipators and springs
 */
 function createDiffEquation(){
-  let elementSelector={
+  let elementSelector={ //contains equivalent single digit for elements configuration 
     1:1, //single spring
     10:1,
     100:1,

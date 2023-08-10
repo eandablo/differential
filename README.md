@@ -1,7 +1,5 @@
 # Differential
 
-## Introduction
-
 Differential is a website designed to help people with basic knowledge of differencial calculus to understand the relevance of differential equations to represent mathematically physical problems. Differential guides the user to describe a simple problem, namely mechanical relaxation, in a single or set of differential equations.
 
 ## User experience UX
@@ -49,9 +47,29 @@ to diplay user information and log out option. Immediately below there is a sect
 
 ![user_page](assets/images/user_page.png)
 
-## Website surface
+### Website surface
 
+#### Login page
 
+The login page greets the user with a suggestive picture of school utensiles at the left, to set the learning mood. At the top right to links takes us either to the login or sign-up pages. Bellow, approximatelly at the the vertical center, you will find the fieldset containing the inputs for email (username) and password, immediatelly followed by the login button. Just bellow the fieldset, there is another link to the sign-up page.
+
+![login_surface](assets/images/login_website.png)
+
+#### Sign-up page
+
+The sign-up page has the same surface as the login page for consistency. The fieldset in this case contains four fields for user name, email, education level and password.
+
+![signup_surface](assets/images/signup_website.png)
+
+#### User page
+After signing-up or login in, you will be redirected to the user page where the first thing tou will gind is a welcome message with your first name at the top left. At the top right you will find a burger button which at clicking on it will show you your info and a log out link.
+The next section it the decription of the game. This contains three sections: Description, the case of study and the instructions.
+
+![header_surface](assets/images/header_website.png)
+
+The last section contains the game. The left about contains the actual playground with a docking area to latch elements you can produce by clicking on the top buttons. In the desktop version you can drag the elements to the sockets and the element will latch at proximity to the point. To reset the game simple click the reset button at the bottom. The center and left about contains the updated equation and physics descriing the right about  respectively.
+
+![gamearea_surface](assets/images/game_area_website.png)
 
 #### First time user
 
