@@ -129,16 +129,6 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
   3. As returning user, I need to find instructions to use the page in order to refresh my past experience.
     - I read again the instructions of the game. After playing a second time I started to understand better the physics and how to create differential equation to mathematically express it.
 
-#### First time user
-
-- A first time user I will find a login page with clearly indicated suscribe links
-- As a first time user, after filling the suscribe page fields and clicking on suscribe button, the user will be redirected to the userpage.
-- As a first time user, the user page will show me a welcome message and a small burger button to show my details and log out link. Immediately after, I found a section explaining the intention of the website, the case of study and instructions. The game area below is divided in three abouts. The left one contains the playground, where a mechanic device can be easily built. The cetral and right about are uptated live with the physics and mathematics describing the device.
-
-### Second time user
-
-- As a second time user
-
 ### Known bugs
 
 No bugs were found after testing in several devices.

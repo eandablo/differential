@@ -423,7 +423,6 @@ th {
     font-size: 120%;
 }
 
-
 /* Adding responsiveness for tablets and mobiles */
 @media screen and (max-width:1073px) {
     #outer-login-page {
