@@ -222,13 +222,32 @@ function moveDiv(event) {
   let ydOld = parseInt(document.getElementById('holder5').textContent);
 // Reading id of the moving div
   let divId = document.getElementById('holder3').textContent;
-  let deltaX = event.clientX - xmOld+xdOld;
-  let deltaY = event.clientY - ymOld+ydOld;
+  let deltaX = event.clientX - xmOld;
+  let deltaY = event.clientY - ymOld;
   let movingDiv =document.getElementById(divId);
-  movingDiv.style.left = deltaX + "px"; //updates the position of the draging element
-  movingDiv.style.top = deltaY + "px";
-  distanceElement(deltaX,deltaY,movingDiv);
+  movingDiv.style.left = deltaX + xdOld + "px"; //updates the position of the draging element
+  movingDiv.style.top = deltaY + ydOld + "px";
+  distanceElement(deltaX + xdOld, deltaY + ydOld,movingDiv);
+  preventMoveOut(deltaX, xdOld, deltaY, ydOld);
 }
+
+/**
+ * Stops the mechanical elements from leaving the playground by calling freeElement
+ * @param {*} deltaX 
+ * @param {*} xdOld 
+ * @param {*} deltaY 
+ * @param {*} ydOld 
+ */
+function preventMoveOut(deltaX,xdOld,deltaY,ydOld){
+  leftOut=deltaX + xdOld<=0 && deltaX<0; //True if element leaves from left
+  rightOut = deltaX + xdOld >= 250 && deltaX > 0; //True if element leaves from right
+  topOut = deltaY + ydOld <= 0 && deltaY < 0; //True if element leaves from top
+  bottomOut = deltaY + ydOld >= 320 && deltaY > 0; //True if element leaves from bottom
+  if (leftOut || rightOut || topOut || bottomOut){
+    freeElement();
+  }
+}
+
 /**
  * On mouse up frees element from dragging by removing event listeners of movingDiv
  */
