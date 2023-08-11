@@ -82,6 +82,9 @@ function addSpring() {
     document.getElementById('holder3').innerText = divId;
     activateSockets(); //starting socket buttons
   }
+  else {
+    throw 'Sorry, the element can´t be added';
+  }
 }
 /**
  * Adds a new dissipator element
@@ -123,6 +126,9 @@ function addDissipator() {
     document.getElementById('game-area-left').appendChild(newDissipator);
     document.getElementById('holder3').innerText = divId;
     activateSockets();
+  }
+  else{
+    throw 'Sorry, the element can´t be added';
   }
 }
 /**
