@@ -25,12 +25,14 @@ body {
     height: 100vh;
 }
 
+/* Left about image of login page */
 #login-img {
     height: 100%;
     width: 100%;
     background: url('../images/login_image.webp') center center/ cover no-repeat;
 }
 
+/* Differential Logo */
 #login-img div {
     padding-top: 50px;
     margin: 230px auto 0 auto;
@@ -46,7 +48,7 @@ body {
 #login-holder {
     width: 100%;
 }
-
+/* Top right links to login and sign-up pages*/
 #login-holder ul {
     list-style-type: none;
     text-align: end;
@@ -61,6 +63,7 @@ a {
     text-decoration: none;
 }
 
+/* Div holder for form*/
 #login-holder div {
     text-align: center;
     width: 100%;
@@ -114,13 +117,13 @@ a {
     background-color: #a75910;
 }
 
-/* Suscribe page */
 #suscribe-link-div {
     width: 100%;
     text-align: center;
     margin: 50px auto 0 auto;
 }
 
+/* Suscribe page */
 #suscribe-field {
     margin: 75px auto 0 auto;
     text-align: left;
@@ -151,6 +154,8 @@ a {
 }
 
 /* User page*/
+
+/*div containing welcome message and gurger button*/
 #header-div {
     display: grid;
     grid-template-columns: 70% 30%;
@@ -163,6 +168,7 @@ a {
     margin: 10px 0 0 10px;
 }
 
+/* burger button */
 #user-button {
     width: 30px;
     height: 30px;
@@ -173,6 +179,7 @@ a {
     z-index: 3;
 }
 
+/* div display by burger button */
 #user-info-div {
     width: 100%;
     height: 200px;
@@ -192,6 +199,8 @@ a {
 #user-info-div>h3 {
     margin: 20px 0 20px 20px;
 }
+
+/* instructions section*/
 
 #instructions {
     width: 100%;
@@ -264,6 +273,7 @@ ol {
     display: none;
 }
 
+/* Game area playground*/
 #game-area {
     text-align: center;
     width: 100%;
@@ -316,6 +326,7 @@ ol {
     display: none;
 }
 
+/* socket buttons that appear in mobile devices*/
 #socket-1 {
     position: absolute;
     top: 115px;
@@ -340,28 +351,7 @@ ol {
     left: 177px;
 }
 
-#game-area-center {
-    height: 370px;
-    flex: 0 1 400px;
-    border: #1b1b1b inset 3px;
-    border-radius: 10px;
-    margin: 20px;
-}
-
-#game-area-center>h3,
-h4 {
-    margin-top: 10px;
-}
-
-#game-area-right {
-    height: 370px;
-    flex: 0 1 400px;
-    border: #1b1b1b inset 3px;
-    border-radius: 10px;
-    margin: 20px;
-    padding-top: 20px;
-}
-
+/* style classes for game elements (spring and disspator)*/
 .spring-div {
     position: absolute;
     width: 35px;
@@ -385,6 +375,30 @@ h4 {
     color: #fff;
     padding: 10px;
     font-size: 150%;
+}
+
+/* game area holder for equation development*/
+#game-area-center {
+    height: 370px;
+    flex: 0 1 400px;
+    border: #1b1b1b inset 3px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+#game-area-center>h3,
+h4 {
+    margin-top: 10px;
+}
+
+/* game area table holder*/
+#game-area-right {
+    height: 370px;
+    flex: 0 1 400px;
+    border: #1b1b1b inset 3px;
+    border-radius: 10px;
+    margin: 20px;
+    padding-top: 20px;
 }
 
 /* Remove from diplay all data holders for javascript functions*/
