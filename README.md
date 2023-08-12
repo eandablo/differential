@@ -1,6 +1,6 @@
 # Differential
 
-Differential is a website designed to help people with basic knowledge of differencial calculus to understand the relevance of differential equations to represent mathematically physical problems. Differential guides the user to describe a simple problem, namely mechanical relaxation, in a single or set of differential equations.
+Differential is a website designed to help people with basic knowledge of differencial calculus to understand the relevance of differential equations to mathematically represent physical problems. Differential guides the user to describe a simple problem, namely mechanical relaxation, in a single or set of differential equations. Later versions of the website are expected to include further challenges.
 
 ## User experience (UX)
 
@@ -10,12 +10,14 @@ Differential is a website designed to help people with basic knowledge of differ
 
 - As first time user, I need to find a friendly page to sign-up.
 - As first time user, after signing up, I need to find a description of the website including instructions.
+- As first time user, after using the game area I should feel incentivised to visit again.
 
 #### Returning user
 
 - As returning user, I need to find a friendly and simple login page.
 - As returning user, After login in, I need to be able to access the information I used to sign-up.
 - As returning user, I need to find instructions to use the page in order to refresh my past experience.
+- As returning user, the game must increase my knwoledge on the subject.
 
 ### Design
 
@@ -78,7 +80,9 @@ The last section contains the game. The left about contains the actual playgroun
 ## Features
 
 - Responsive to most devices, but differential is not appropriate for use in Galaxy fold device due to the narrow screen and incompatibility with the game area.
-
+  - [index](http://www.responsinator.com/?url=https%3A%2F%2Feandablo.github.io%2Fdifferential%2F)
+  - [suscribe](http://www.responsinator.com/?url=https%3A%2F%2Feandablo.github.io%2Fdifferential%2Fsuscribe.html)
+  - [userpage](http://www.responsinator.com/?url=https%3A%2F%2Feandablo.github.io%2Fdifferential%2Fuserpage.html)
 - Interactive elements: draggable elements, buttons, text inputs.
 
 ## Technologies Used
@@ -111,23 +115,30 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
 
 #### First time user
 
-  1. As first time user, I need to find a friendly page to sign-up.
-    - I found a login page and I am greeted by an image that reminded me of school and links to the sign-up page.
-    - The sign-up page is consistent in appearance with the login page and informationn is easily filled.
-    - After clicking on submit, I am transfered to the userpage where I am greeted wit a welcome message. Unfortunately, the site is not able to store my information at the moment.
-  2. As first time user, after signing up, I need to find a description of the website including instructions.
-    - On the user page, I find clear messages of what to expect of the website and instructions to play the game.
-    - The game is easy to play and the information received is not easy to process at first, but it is clear.
-    - To log out after clicking the burger button I found together with my user information a link to log out.
+1. As first time user, I need to find a friendly page to sign-up.
+   - I found a login page and I am greeted by an image that reminded me of school and links to the sign-up page.
+   - The sign-up page is consistent in appearance with the login page and informationn is easily filled.After clicking on submit, I am transfered to the userpage where I am greeted wit a welcome message.
+   - Unfortunately, the site is not able to store my information at the moment.
+
+2. As first time user, after signing up, I need to find a description of the website including instructions.
+
+   - On the user page, I find clear messages of what to expect of the website and instructions to play the game.
+
+3. As first time user, after using the game area I should feel incentivised to visit again.
+  
+   - The game is easy to play and the information received is not easy to process at first, but it is clear.
+   - To log out after clicking the burger button I found together with my user information a link to log out.
 
 #### Returning user
 
-  1. As returning user, I need to find a friendly and simple login page.
-    - Asssuming my login information is stored in the site, I easily login by entering my email and password.
-  2. As returning user, after login in, I need to be able to access the information I used to sign-up.
-    - I revised my information by clicking on the burger button.
-  3. As returning user, I need to find instructions to use the page in order to refresh my past experience.
-    - I read again the instructions of the game. After playing a second time I started to understand better the physics and how to create differential equation to mathematically express it.
+1. As returning user, I need to find a friendly and simple login page.
+   - Asssuming my login information is stored in the site, I easily login by entering my email and password.
+2. As returning user, after login in, I need to be able to access the information I used to sign-up.
+   - I revised my information by clicking on the burger button.
+3. As returning user, I need to find instructions to use the page in order to refresh my past experience.
+   - I read again the instructions of the game.
+4. As returning user, the game must increase my knwoledge on the subject.
+   - After playing a second time I started to understand better the physics and how to create differential equation to mathematically express it.
 
 ### Known bugs
 
