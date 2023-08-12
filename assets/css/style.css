@@ -426,6 +426,7 @@ th {
 
 /* Adding responsiveness for tablets and mobiles */
 @media screen and (max-width:1073px) {
+/* Changing login and sign up page to a single column*/
     #outer-login-page {
         grid-template-columns: 100%;
         grid-template-rows: 150px 800px;
@@ -439,10 +440,12 @@ th {
         padding: 10px;
     }
 
+/* user page header height to adapt to welcome message */
     #header-div {
         height: 140px;
     }
 
+/* increase height of instructions section */
     #instructions {
         height: 800px;
     }
@@ -451,6 +454,7 @@ th {
         height: 750px;
     }
 
+ /* change instructions paragraph fro conecting elements to socket*/   
     .mobile-instruction {
         display: inline;
     }
@@ -459,12 +463,14 @@ th {
         display: none;
     }
 
+ /* make socket buttons visible*/   
     .round-button {
         display: inline-block;
     }
 }
-/* Adding responsiveness for mobiles */
+/* Add responsiveness for mobiles landscape*/
 @media screen and (max-width:715px) {
+/* Increase height to fit single column three divs*/
     #instructions {
         height: 1000px;
     }
