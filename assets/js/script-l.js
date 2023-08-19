@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded',function(){
     ];
 // checking if email exists in usersInfo and password matches user email
     let validUser = false;
-    for (user of usersInfo) {
+    for (let user of usersInfo) {
       if (user.email === userEmail && user.password === userPass) {
         let userDegree = user.degree;
         let userName = user.name;

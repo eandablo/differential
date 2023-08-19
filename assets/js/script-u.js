@@ -239,10 +239,10 @@ function moveDiv(event) {
  * @param {*} ydOld 
  */
 function preventMoveOut(deltaX,xdOld,deltaY,ydOld){
-  leftOut=deltaX + xdOld<=0 && deltaX<0; //True if element leaves from left
-  rightOut = deltaX + xdOld >= 250 && deltaX > 0; //True if element leaves from right
-  topOut = deltaY + ydOld <= 0 && deltaY < 0; //True if element leaves from top
-  bottomOut = deltaY + ydOld >= 320 && deltaY > 0; //True if element leaves from bottom
+ let leftOut=deltaX + xdOld<=0 && deltaX<0; //True if element leaves from left
+ let rightOut = deltaX + xdOld >= 250 && deltaX > 0; //True if element leaves from right
+ let topOut = deltaY + ydOld <= 0 && deltaY < 0; //True if element leaves from top
+ let bottomOut = deltaY + ydOld >= 320 && deltaY > 0; //True if element leaves from bottom
   if (leftOut || rightOut || topOut || bottomOut){
     freeElement();
   }
