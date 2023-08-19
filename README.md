@@ -1,5 +1,7 @@
 # Differential
 
+[Please visit  the full live project here](https://eandablo.github.io/differential/)
+
 Differential is a website designed to help people with basic knowledge of differencial calculus to understand the relevance of differential equations to mathematically represent physical problems. Differential guides the user to describe a simple problem, namely mechanical relaxation, in a single or set of differential equations. Later versions of the website are expected to include further challenges.
 
 ## User experience (UX)

@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded',function(){
 // gets login button and allows login if conditions in loginFunction are met
   document.getElementById('login-button').addEventListener('click', function(event) {
     event.preventDefault();
-    let loginForm=document.getElementById('login-form');
     let loginField = document.getElementById('login-field');
     let userEmail = loginField.children[3].value;
     let userPass = loginField.children[7].value;
