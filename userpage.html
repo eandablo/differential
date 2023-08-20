@@ -73,9 +73,13 @@
         <div>
             <div id="game-area-left">
                 <div id="game-buttons-area">
-                    <button id="spring-button" class="game-buttons">SPRING</button>
-                    <button id="dissipator-button" class="game-buttons">DISSIPATOR</button>
-    <!--This spans are display:none in order to hold invisible information to be used by js-->
+                    <button id="spring-button" class="game-buttons" aria-labelledby="game-buttons-area">
+                        SPRING
+                    </button>
+                    <button id="dissipator-button" class="game-buttons" aria-labelledby="game-buttons-area">
+                        DISSIPATOR
+                    </button>
+                <!--This spans are display:none in order to hold invisible information to be used by js-->
                     <span id="holder1">0</span>
                     <span id="holder2">0</span>
                     <span id="holder3">id</span>
@@ -83,7 +87,7 @@
                     <span id="holder5">0</span>
                 </div>
             <!--SVG figure to provide docking place for elements generated to play the game-->
-                <svg width="100" height="250">
+                <svg width="100" height="250" aria-labelledby="game-area-left">
                     <path d="M0 0 H100 V50 H70 V100 H100 V150 H70 V200 H100 V250 H0
                     V200 H30 V150 H0 V100 H30 V50 H0 Z" fill="#a75910"/>
                 </svg>
@@ -97,7 +101,9 @@
                 </button>
                 <button id="socket-4" class="round-button" aria-label="socket button 1" aria-labelledby="game-area-left">
                 </button>
-                <button id="reset-button" class="game-buttons">RESET</button>
+                <button id="reset-button" class="game-buttons" aria-labelledby="game-area-left">
+                    RESET
+                </button>
             </div>
             <!--This about is updated by JS to show the equations as elements are added in the playground-->
             <div id="game-area-center">
