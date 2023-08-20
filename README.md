@@ -197,7 +197,7 @@ Import statement in stylesheets for primary fonts was obtained from [Google font
 
 ### Content
 
-- Differetial website content was created by Efren A Andablo Reyes.
+- Differential website content was created by Efren A Andablo Reyes.
 - Deployment steps cited in this readme file were obtained from the Code Institute website [readme file](https://github.com/Code-Institute-Solutions/SampleREADME/blob/master/README.md?plain=1).
 
 ### Imagery
