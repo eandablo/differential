@@ -79,6 +79,14 @@ The last section contains the game. The left about contains the actual playgroun
 
 ![gamearea_surface](assets/images/game_area_website.png)
 
+Elements are created by clicking either the spring or dissipator buttons. Once one element has been created, it can be dragged to one of the four sockets as shown in the figure below.
+
+![gamearea_elements](assets/images/game_2.png)
+
+Once 2 or more elements are latch, the equations are shwon end explained as shown in the picture below.
+
+![gamerea_equation](assets/images/game_3.png)
+
 ## Features
 
 - Responsive to most devices, but differential is not appropriate for use in Galaxy fold device due to the narrow screen and incompatibility with the game area.
