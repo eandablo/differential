@@ -120,6 +120,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
   - [suscribe results](https://validator.w3.org/nu/?doc=https%3A%2F%2Feandablo.github.io%2Fdifferential%2Fsuscribe.html)
   - [userpage results](https://validator.w3.org/nu/?doc=https%3A%2F%2Feandablo.github.io%2Fdifferential%2Fuserpage.html)
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - [Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Feandablo.github.io%2Fdifferential%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+- JS code was debugged using JShints with no errors or serious warnings found.
 
 ### Testing User Stories from User Experience (UX) Section
 
