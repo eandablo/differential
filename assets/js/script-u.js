@@ -376,7 +376,7 @@ function resetGame(){
     }
   }
 //clear all table cells in the table area
-  let tableCells=document.getElementsByTagName('td')
+  let tableCells=document.getElementsByTagName('td');
   for (let cell of tableCells){
     cell.children[0].innerHTML="";
     cell.children[1].innerHTML = "";
@@ -431,7 +431,7 @@ function createDiffEquation(){
     1212:7,
     1221:7
   };
-  let tableCells=document.getElementsByTagName('td')
+  let tableCells=document.getElementsByTagName('td');
   let cellValue=0;
   for (let i=0;i<4;i++){
     if (tableCells[i].children[0].innerText.toLowerCase()==="spring"){
@@ -441,7 +441,6 @@ function createDiffEquation(){
     }
   }
   writeEquation(elementSelector[cellValue]);
-//  document.getElementById('dummy-p').innerText = elementSelector[cellValue];
 }
 /**
  * Writes resulting mechanical name and equations in central about of game area
